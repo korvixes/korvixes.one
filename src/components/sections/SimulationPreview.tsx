@@ -103,9 +103,9 @@ export function SimulationPreview() {
   const chartTextColor = "#5a6a80"
 
   return (
-    <section id="simulation" className="relative py-28 overflow-hidden" ref={ref}>
+    <section id="simulation" className="relative py-16 md:py-28 overflow-hidden" ref={ref}>
       <div className="absolute inset-0 bg-circuit opacity-50" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] rounded-full blur-3xl pointer-events-none"
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[800px] aspect-[8/5] rounded-full blur-3xl pointer-events-none"
         style={{ background: 'radial-gradient(ellipse, rgba(42,107,219,0.04), transparent)' }} />
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-border/50 to-transparent" />
 
@@ -115,7 +115,7 @@ export function SimulationPreview() {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7 }}
-          className="text-center mb-16"
+          className="text-center mb-10 md:mb-16"
         >
           <div className="inline-flex items-center gap-2 px-4 py-1.5 mb-6 border border-primary/30 bg-primary/5 cyber-chamfer-sm">
             <Terminal className="w-3 h-3 text-primary" />
@@ -146,7 +146,7 @@ export function SimulationPreview() {
               <div className="terminal-dot bg-[#ff5f56] w-2.5 h-2.5" />
               <div className="terminal-dot bg-[#febc2e] w-2.5 h-2.5" />
               <div className="terminal-dot bg-[#28c840] w-2.5 h-2.5" />
-              <span className="ml-3 text-[10px] text-muted-foreground tracking-widest uppercase" style={{ fontFamily: 'JetBrains Mono, monospace' }}>
+              <span className="ml-3 text-[8px] sm:text-[10px] text-muted-foreground tracking-widest uppercase truncate max-w-[100px] sm:max-w-none" style={{ fontFamily: 'JetBrains Mono, monospace' }}>
                 korvixes — plant-operations-center.exe
               </span>
             </div>
@@ -180,7 +180,7 @@ export function SimulationPreview() {
             </span>
           </div>
 
-          <div className="p-5 grid lg:grid-cols-3 gap-5">
+          <div className="p-3 sm:p-5 grid lg:grid-cols-3 gap-3 sm:gap-5">
             {/* Left: Metrics */}
             <div className="flex flex-col gap-3">
               <h3 className="text-[9px] font-bold tracking-[0.25em] uppercase text-primary/70 mb-1"
@@ -199,7 +199,7 @@ export function SimulationPreview() {
             <div className="flex flex-col gap-3">
               <h3 className="text-[9px] font-bold tracking-[0.25em] uppercase text-primary/70 mb-1"
                 style={{ fontFamily: 'JetBrains Mono, monospace' }}>// Telemetry Streams</h3>
-              <div className="hud-panel p-3 h-44">
+              <div className="hud-panel p-3 h-36 sm:h-44">
                 <div className="text-[9px] text-muted-foreground mb-2 tracking-wider" style={{ fontFamily: 'JetBrains Mono, monospace' }}>TEMP_STREAM :: °C</div>
                 <ResponsiveContainer width="100%" height="85%">
                   <AreaChart data={tempData} margin={{ top: 5, right: 5, left: -25, bottom: 0 }}>
@@ -218,7 +218,7 @@ export function SimulationPreview() {
                 </ResponsiveContainer>
               </div>
 
-              <div className="hud-panel p-3 h-44">
+              <div className="hud-panel p-3 h-36 sm:h-44">
                 <div className="text-[9px] text-muted-foreground mb-2 tracking-wider" style={{ fontFamily: 'JetBrains Mono, monospace' }}>PRES_STREAM :: bar</div>
                 <ResponsiveContainer width="100%" height="85%">
                   <AreaChart data={pressureData} margin={{ top: 5, right: 5, left: -25, bottom: 0 }}>
@@ -302,11 +302,11 @@ export function SimulationPreview() {
 
           {/* Bottom status bar */}
           <div className="px-4 py-2 border-t border-primary/10 bg-black/30 flex items-center justify-between">
-            <span className="text-[9px] text-muted-foreground tracking-wider" style={{ fontFamily: 'JetBrains Mono, monospace' }}>
+            <span className="text-[8px] sm:text-[9px] text-muted-foreground tracking-wider truncate mr-2" style={{ fontFamily: 'JetBrains Mono, monospace' }}>
               <span className="text-primary/50 mr-1">$</span>
               NVIDIA_SDK :: simulation_engine v4.2.1 — powered by NVIDIA SDK
             </span>
-            <span className="text-[9px] text-[#00e676]" style={{ fontFamily: 'JetBrains Mono, monospace' }}>● SYNC ACTIVE</span>
+            <span className="text-[8px] sm:text-[9px] text-[#00e676] shrink-0" style={{ fontFamily: 'JetBrains Mono, monospace' }}>● SYNC ACTIVE</span>
           </div>
         </motion.div>
       </div>

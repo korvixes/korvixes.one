@@ -40,9 +40,9 @@ export function ProductOverview() {
   const isInView = useInView(ref, { once: true, margin: "-80px" })
 
   return (
-    <section id="product" className="relative py-28 overflow-hidden" ref={ref}>
+    <section id="product" className="relative py-16 md:py-28 overflow-hidden" ref={ref}>
       <div className="absolute inset-0 bg-circuit opacity-60" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] rounded-full blur-3xl pointer-events-none"
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[700px] aspect-[7/4] rounded-full blur-3xl pointer-events-none"
         style={{ background: 'radial-gradient(ellipse, rgba(42,107,219,0.05), transparent)' }} />
 
       <div className="relative max-w-7xl mx-auto px-6">
@@ -51,7 +51,7 @@ export function ProductOverview() {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7 }}
-          className="text-center mb-20"
+          className="text-center mb-12 md:mb-20"
         >
           <div className="inline-flex items-center gap-2 px-4 py-1.5 mb-6 border border-accent/30 bg-accent/5 cyber-chamfer-sm"
             style={{ fontFamily: 'JetBrains Mono, monospace' }}>
@@ -77,8 +77,8 @@ export function ProductOverview() {
               initial={{ opacity: 0, y: 40 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: i * 0.15 }}
-              className={`group relative p-8 cursor-default overflow-hidden transition-all duration-300 hover:bg-primary/5
-                ${i < 2 ? 'border-r border-border/40' : ''}`}
+              className={`group relative p-6 sm:p-8 cursor-default overflow-hidden transition-all duration-300 hover:bg-primary/5
+                ${i < 2 ? 'md:border-r border-border/40' : ''}`}
             >
               {/* Hover beam */}
               <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-0 group-hover:opacity-100">
@@ -121,7 +121,7 @@ export function ProductOverview() {
               <div className={`pt-6 border-t ${
                 pillar.color === "primary" ? "border-primary/20" : "border-accent/20"
               }`}>
-                <div className={`text-4xl font-black ${
+                <div className={`text-2xl md:text-4xl font-black ${
                   pillar.color === "primary" ? "gradient-text text-glow-blue" : "text-accent text-glow-cyan"
                 }`} style={{ fontFamily: 'Orbitron, monospace' }}>
                   {pillar.metric}

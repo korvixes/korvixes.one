@@ -46,9 +46,9 @@ export function UseCases() {
   const isInView = useInView(ref, { once: true, margin: "-60px" })
 
   return (
-    <section id="use-cases" className="relative py-28 overflow-hidden" ref={ref}>
+    <section id="use-cases" className="relative py-16 md:py-28 overflow-hidden" ref={ref}>
       <div className="absolute inset-0 bg-grid opacity-30" />
-      <div className="absolute left-0 top-1/2 -translate-y-1/2 w-[500px] h-[500px] blur-3xl pointer-events-none"
+      <div className="absolute left-0 top-1/2 -translate-y-1/2 w-full max-w-[500px] aspect-square blur-3xl pointer-events-none"
         style={{ background: 'radial-gradient(ellipse, rgba(59,196,232,0.04), transparent)' }} />
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-border/50 to-transparent" />
 
@@ -58,7 +58,7 @@ export function UseCases() {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7 }}
-          className="text-center mb-16"
+          className="text-center mb-10 md:mb-16"
         >
           <div className="inline-flex items-center gap-2 px-4 py-1.5 mb-6 border border-accent/30 bg-accent/5 cyber-chamfer-sm">
             <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-accent" style={{ fontFamily: 'JetBrains Mono, monospace' }}>// Use Cases</span>
@@ -82,9 +82,10 @@ export function UseCases() {
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: i * 0.1 }}
-              className={`group relative p-8 cursor-default overflow-hidden transition-all duration-300 hover:bg-accent/3
-                ${i % 2 === 0 ? 'border-r border-border/40' : ''}
-                ${i < 2 ? 'border-b border-border/40' : ''}
+              className={`group relative p-6 md:p-8 cursor-default overflow-hidden transition-all duration-300 hover:bg-accent/3
+                ${i % 2 === 0 ? 'md:border-r border-border/40' : ''}
+                ${i < 2 ? 'md:border-b border-border/40' : ''}
+                ${i < useCases.length - 1 ? 'border-b border-border/40 md:border-b-0' : ''}
               `}
             >
               {/* Hover beam */}

@@ -1,3 +1,5 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom"
+import { ScrollToTop } from "@/components/layout/ScrollToTop"
 import { Navbar } from "@/components/layout/Navbar"
 import { Footer } from "@/components/layout/Footer"
 import { Hero } from "@/components/sections/Hero"
@@ -8,7 +10,24 @@ import { UseCases } from "@/components/sections/UseCases"
 import { TechStack } from "@/components/sections/TechStack"
 import { CTASection } from "@/components/sections/CTASection"
 
-export function App() {
+// Legal Pages
+import { PrivacyPolicyPage } from "@/pages/legal/PrivacyPolicyPage"
+import { TermsOfServicePage } from "@/pages/legal/TermsOfServicePage"
+import { SecurityPage } from "@/pages/legal/SecurityPage"
+import { CompliancePage } from "@/pages/legal/CompliancePage"
+
+// Company Pages
+import { AboutUsPage } from "@/pages/company/AboutUsPage"
+import { CareersPage } from "@/pages/company/CareersPage"
+import { PartnersPage } from "@/pages/company/PartnersPage"
+import { PressKitPage } from "@/pages/company/PressKitPage"
+
+// Content Pages
+import { BlogPage } from "@/pages/content/BlogPage"
+import { ManufacturingPage } from "@/pages/content/ManufacturingPage"
+
+
+function HomePage() {
   return (
     <div className="min-h-screen bg-background text-foreground antialiased">
       <Navbar />
@@ -23,6 +42,30 @@ export function App() {
       </main>
       <Footer />
     </div>
+  )
+}
+
+export function App() {
+  return (
+    <BrowserRouter>
+      <ScrollToTop />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        {/* Legal */}
+        <Route path="/privacy" element={<PrivacyPolicyPage />} />
+        <Route path="/terms" element={<TermsOfServicePage />} />
+        <Route path="/security" element={<SecurityPage />} />
+        <Route path="/compliance" element={<CompliancePage />} />
+        {/* Company */}
+        <Route path="/about" element={<AboutUsPage />} />
+        <Route path="/careers" element={<CareersPage />} />
+        <Route path="/partners" element={<PartnersPage />} />
+        <Route path="/press" element={<PressKitPage />} />
+        {/* Content */}
+        <Route path="/blog" element={<BlogPage />} />
+        <Route path="/solutions/manufacturing" element={<ManufacturingPage />} />
+      </Routes>
+    </BrowserRouter>
   )
 }
 

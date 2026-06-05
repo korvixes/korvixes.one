@@ -31,9 +31,9 @@ export function TechStack() {
   const isInView = useInView(ref, { once: true, margin: "-60px" })
 
   return (
-    <section id="technology" className="relative py-28 overflow-hidden" ref={ref}>
+    <section id="technology" className="relative py-16 md:py-28 overflow-hidden" ref={ref}>
       <div className="absolute inset-0 bg-circuit opacity-40" />
-      <div className="absolute top-1/2 right-0 translate-x-1/3 -translate-y-1/2 w-[500px] h-[500px] blur-3xl pointer-events-none"
+      <div className="absolute top-1/2 right-0 translate-x-1/3 -translate-y-1/2 w-full max-w-[500px] aspect-square blur-3xl pointer-events-none"
         style={{ background: 'radial-gradient(ellipse, rgba(42,107,219,0.05), transparent)' }} />
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-border/50 to-transparent" />
 
@@ -43,7 +43,7 @@ export function TechStack() {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7 }}
-          className="text-center mb-16"
+          className="text-center mb-10 md:mb-16"
         >
           <div className="inline-flex items-center gap-2 px-4 py-1.5 mb-6 border border-primary/30 bg-primary/5 cyber-chamfer-sm">
             <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-primary" style={{ fontFamily: 'JetBrains Mono, monospace' }}>// Technology Stack</span>
@@ -64,7 +64,7 @@ export function TechStack() {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7, delay: 0.1 }}
-          className="mb-10 hud-panel p-6 overflow-hidden"
+          className="mb-6 md:mb-10 hud-panel p-4 md:p-6 overflow-hidden"
         >
           <div className="text-[9px] font-bold tracking-[0.25em] uppercase text-muted-foreground mb-6 text-center"
             style={{ fontFamily: 'JetBrains Mono, monospace' }}>
@@ -79,7 +79,7 @@ export function TechStack() {
                 transition={{ delay: 0.2 + i * 0.1, duration: 0.5 }}
                 className="relative group"
               >
-                <div className="flex items-center gap-4 px-5 py-3 border transition-all duration-300"
+                <div className="flex items-center gap-3 md:gap-4 px-3 md:px-5 py-3 border transition-all duration-300"
                   style={{ borderColor: `${layer.color}22`, backgroundColor: `${layer.color}08` }}
                 >
                   <div className="w-7 h-7 cyber-chamfer-sm flex items-center justify-center border shrink-0"
@@ -96,8 +96,8 @@ export function TechStack() {
                   </div>
                   {/* Connection indicator */}
                   <div className="shrink-0 flex items-center gap-1">
-                    <span className="w-1.5 h-1.5 rounded-full animate-pulse-glow" style={{ backgroundColor: layer.color }} />
-                    <span className="text-[9px] tracking-widest uppercase" style={{ fontFamily: 'JetBrains Mono, monospace', color: layer.color }}>ACTIVE</span>
+                    <span className="w-1.5 h-1.5 rounded-full animate-pulse-glow shrink-0" style={{ backgroundColor: layer.color }} />
+                    <span className="text-[9px] tracking-widest uppercase hidden sm:inline" style={{ fontFamily: 'JetBrains Mono, monospace', color: layer.color }}>ACTIVE</span>
                   </div>
                 </div>
                 {/* Connector line between layers */}
@@ -110,16 +110,18 @@ export function TechStack() {
         </motion.div>
 
         {/* Tech cards */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-0 border border-border/40 mb-10">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-0 border border-border/40 mb-6 md:mb-10">
           {techItems.map((item, i) => (
             <motion.div
               key={item.name}
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: i * 0.08 }}
-              className={`group p-5 cursor-default transition-all duration-300 hover:bg-primary/5 overflow-hidden relative
-                ${i % 3 !== 2 ? 'border-r border-border/40' : ''}
-                ${i < 3 ? 'border-b border-border/40' : ''}
+              className={`group p-5 cursor-default transition-all duration-300 hover:bg-primary/5 overflow-hidden relative border-b border-border/40
+                ${i >= 5 ? 'sm:border-b-0' : ''}
+                ${i >= 3 ? 'lg:border-b-0' : ''}
+                ${i % 2 === 0 ? 'sm:border-r sm:border-border/40' : ''}
+                ${i % 3 !== 2 ? 'lg:border-r lg:border-border/40' : ''}
               `}
             >
               <div className="absolute top-0 left-0 w-4 h-4 border-t border-l border-primary/0 group-hover:border-primary/70 transition-all duration-300" />
@@ -155,14 +157,14 @@ export function TechStack() {
             style={{ fontFamily: 'JetBrains Mono, monospace' }}>
             // Platform Capabilities
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-border/40">
+          <div className="grid grid-cols-2 md:grid-cols-4">
             {capabilities.map((cap, i) => (
               <motion.div
                 key={cap.label}
                 initial={{ opacity: 0, scale: 0.9 }}
-                animate={isInView ? { opacity: 1, scale: 1 } : {}}
+                animate={isInView ? { opacity: 1, scale: 0 } : {}}
                 transition={{ delay: 0.6 + i * 0.1 }}
-                className="text-center px-6 py-2"
+                className={`text-center px-6 py-2 ${i < 2 ? 'border-b border-border/40 md:border-b-0' : ''} ${i % 2 === 0 ? 'border-r border-border/40 md:border-r-0' : ''} ${i < 3 ? 'md:border-r md:border-border/40' : ''}`}
               >
                 <div className="text-2xl font-black gradient-text mb-1" style={{ fontFamily: 'Orbitron, monospace' }}>
                   {cap.value}

@@ -35,7 +35,7 @@ export function Hero() {
   return (
     <section
       ref={containerRef}
-      className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden pt-20"
+      className="relative min-h-[100dvh] flex flex-col items-center justify-center overflow-hidden pt-20"
     >
       {/* Animated grid */}
       <div className="absolute inset-0 bg-grid-animated" />
@@ -129,7 +129,7 @@ export function Hero() {
           className="mb-8"
         >
           <h1
-            className="text-5xl md:text-7xl lg:text-8xl font-black leading-[0.9] mb-0 animate-glitch"
+            className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black leading-[0.9] mb-0 animate-glitch"
             style={{ fontFamily: 'Orbitron, monospace', letterSpacing: '-0.02em' }}
           >
             <span className="block text-foreground/90 text-glow-blue" data-text="DIGITAL TWIN">DIGITAL TWIN</span>
@@ -166,7 +166,7 @@ export function Hero() {
           className="flex flex-wrap gap-4 justify-center mb-16"
         >
           <button
-            className="group relative cyber-chamfer bg-primary/15 border border-primary/60 hover:border-primary hover:bg-primary/25 hover:glow-blue text-primary text-sm font-semibold tracking-widest uppercase px-8 py-4 transition-all duration-200 flex items-center gap-3"
+            className="group relative cyber-chamfer bg-primary/15 border border-primary/60 hover:border-primary hover:bg-primary/25 hover:glow-blue text-primary text-sm font-semibold tracking-widest uppercase px-6 sm:px-8 py-3 sm:py-4 transition-all duration-200 flex items-center gap-3"
             style={{ fontFamily: 'JetBrains Mono, monospace' }}
           >
             <span>Explore Platform</span>
@@ -176,7 +176,7 @@ export function Hero() {
             </div>
           </button>
           <button
-            className="cyber-chamfer border border-border/50 hover:border-accent/50 bg-transparent hover:bg-accent/5 text-muted-foreground hover:text-accent text-sm font-semibold tracking-widest uppercase px-8 py-4 transition-all duration-200 flex items-center gap-3"
+            className="cyber-chamfer border border-border/50 hover:border-accent/50 bg-transparent hover:bg-accent/5 text-muted-foreground hover:text-accent text-sm font-semibold tracking-widest uppercase px-6 sm:px-8 py-3 sm:py-4 transition-all duration-200 flex items-center gap-3"
             style={{ fontFamily: 'JetBrains Mono, monospace' }}
           >
             <Play className="w-4 h-4" />
@@ -189,10 +189,10 @@ export function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.9, duration: 0.6 }}
-          className="flex flex-wrap justify-center gap-0 divide-x divide-border/40"
+          className="flex flex-wrap justify-center gap-x-0"
         >
-          {stats.map((stat) => (
-            <div key={stat.label} className="flex flex-col items-center gap-1 px-8 py-2">
+          {stats.map((stat, i) => (
+            <div key={stat.label} className={`flex flex-col items-center gap-1 px-8 py-2 ${i < stats.length - 1 ? 'border-r border-border/40 max-sm:border-r-0 max-sm:border-b max-sm:pb-4 max-sm:mb-4 max-sm:w-full' : ''}`}>
               <stat.icon className="w-3.5 h-3.5 text-accent mb-1" strokeWidth={1.5} />
               <span className="text-xl md:text-2xl font-black gradient-text" style={{ fontFamily: 'Orbitron, monospace' }}>
                 {stat.value}
@@ -206,20 +206,30 @@ export function Hero() {
       </motion.div>
 
       {/* Bottom fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-background to-transparent" />
+      <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-background to-transparent pointer-events-none" />
 
-      {/* Scroll indicator */}
+      {/* Scroll indicator — outside parallax container, above fade layer */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.5 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1"
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-20"
       >
-        <span className="text-[9px] text-muted-foreground tracking-[0.3em] uppercase" style={{ fontFamily: 'JetBrains Mono, monospace' }}>Scroll</span>
+        <span
+          className="text-[9px] text-muted-foreground/70 tracking-[0.3em] uppercase"
+          style={{ fontFamily: 'JetBrains Mono, monospace' }}
+        >
+          Scroll
+        </span>
         <motion.div
-          animate={{ y: [0, 8, 0] }}
-          transition={{ duration: 1.5, repeat: Infinity }}
-          className="w-px h-8 bg-gradient-to-b from-primary/70 to-transparent"
+          animate={{ y: [0, 8, 0], opacity: [0.6, 1, 0.6] }}
+          transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
+          className="w-px h-10 bg-gradient-to-b from-primary via-primary/50 to-transparent"
+        />
+        <motion.div
+          animate={{ y: [0, 6, 0], opacity: [0.3, 0.7, 0.3] }}
+          transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut", delay: 0.3 }}
+          className="w-1.5 h-1.5 rounded-full bg-primary/60"
         />
       </motion.div>
     </section>
