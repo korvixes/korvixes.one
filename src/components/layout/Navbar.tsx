@@ -84,19 +84,16 @@ export function Navbar() {
 
         {/* CTA */}
         <div className="hidden md:flex items-center gap-3">
-          <button className="text-xs font-medium tracking-widest uppercase text-muted-foreground hover:text-accent transition-colors px-3 py-2"
-            style={{ fontFamily: 'JetBrains Mono, monospace' }}>
-            Sign In
-          </button>
           <button
-            className="relative cyber-chamfer-sm btn-shimmer border border-primary/50 hover:border-primary text-primary hover:glow-blue text-xs font-semibold tracking-widest uppercase px-5 py-2.5 transition-all duration-200 flex items-center gap-2 overflow-hidden"
+            onClick={() => navigate("/product")}
+            className="relative cyber-chamfer-sm btn-shimmer border border-primary/50 hover:border-primary text-primary hover:glow-blue text-xs font-semibold tracking-widest uppercase px-5 py-2.5 transition-all duration-200 flex items-center gap-2 overflow-hidden cursor-pointer"
             style={{ fontFamily: 'JetBrains Mono, monospace' }}
           >
             {/* Beam */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
               <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-accent/60 to-transparent animate-beam" />
             </div>
-            <span className="relative z-10">Request Demo</span>
+            <span className="relative z-10">korvixes.one</span>
             <ChevronRight className="w-3 h-3 relative z-10" />
           </button>
         </div>
@@ -135,10 +132,13 @@ export function Navbar() {
                 </button>
               ))}
               <div className="pt-3 border-t border-border/40 flex flex-col gap-2 mt-1">
-                <button className="w-full cyber-chamfer-sm border border-border/60 text-muted-foreground text-xs tracking-widest uppercase py-2.5 hover:border-primary/40 hover:text-primary transition-all"
-                  style={{ fontFamily: 'JetBrains Mono, monospace' }}>Sign In</button>
-                <button className="w-full cyber-chamfer-sm bg-primary/15 border border-primary/50 text-primary text-xs tracking-widest uppercase py-2.5 font-semibold hover:glow-blue transition-all"
-                  style={{ fontFamily: 'JetBrains Mono, monospace' }}>Request Demo</button>
+                <button
+                  onClick={() => {
+                    setMobileOpen(false)
+                    navigate("/product")
+                  }}
+                  className="w-full cyber-chamfer-sm bg-primary/15 border border-primary/50 text-primary text-xs tracking-widest uppercase py-2.5 font-semibold hover:glow-blue transition-all cursor-pointer"
+                  style={{ fontFamily: 'JetBrains Mono, monospace' }}>korvixes.one</button>
               </div>
             </div>
           </motion.div>

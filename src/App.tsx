@@ -7,7 +7,10 @@ import { ProductOverview } from "@/components/sections/ProductOverview"
 import { Features } from "@/components/sections/Features"
 import { SimulationPreview } from "@/components/sections/SimulationPreview"
 import { UseCases } from "@/components/sections/UseCases"
+import { Testimonials } from "@/components/sections/Testimonials"
 import { TechStack } from "@/components/sections/TechStack"
+import { FAQSection } from "@/components/sections/FAQSection"
+import { Pricing } from "@/components/sections/Pricing"
 import { CTASection } from "@/components/sections/CTASection"
 
 // Legal Pages
@@ -29,6 +32,9 @@ import { ManufacturingPage } from "@/pages/content/ManufacturingPage"
 // Contact Page
 import { ContactPage } from "@/pages/contact/ContactPage"
 
+// Product Page
+import { ProductPage } from "@/pages/product/ProductPage"
+
 
 function HomePage() {
   return (
@@ -40,7 +46,10 @@ function HomePage() {
         <Features />
         <SimulationPreview />
         <UseCases />
+        <Testimonials />
         <TechStack />
+        <FAQSection />
+        <Pricing />
         <CTASection />
       </main>
       <Footer />
@@ -69,6 +78,8 @@ export function App() {
         <Route path="/solutions/manufacturing" element={<ManufacturingPage />} />
         {/* Contact */}
         <Route path="/contact" element={<ContactPage />} />
+        {/* Product */}
+        <Route path="/product" element={<ProductPage />} />
       </Routes>
     </BrowserRouter>
   )
