@@ -26,6 +26,9 @@ import { PressKitPage } from "@/pages/company/PressKitPage"
 import { BlogPage } from "@/pages/content/BlogPage"
 import { ManufacturingPage } from "@/pages/content/ManufacturingPage"
 
+// Contact Page
+import { ContactPage } from "@/pages/contact/ContactPage"
+
 
 function HomePage() {
   return (
@@ -64,6 +67,8 @@ export function App() {
         {/* Content */}
         <Route path="/blog" element={<BlogPage />} />
         <Route path="/solutions/manufacturing" element={<ManufacturingPage />} />
+        {/* Contact */}
+        <Route path="/contact" element={<ContactPage />} />
       </Routes>
     </BrowserRouter>
   )

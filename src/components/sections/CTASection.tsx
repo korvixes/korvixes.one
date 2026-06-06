@@ -1,5 +1,6 @@
 import { useRef } from "react"
 import { motion, useInView } from "framer-motion"
+import { Link } from "react-router-dom"
 import { ChevronRight, Mail, Terminal } from "lucide-react"
 
 const trustItems = [
@@ -77,13 +78,14 @@ export function CTASection() {
                 <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-accent/70 to-transparent animate-beam" />
               </div>
             </button>
-            <button
+            <Link
+              to="/contact"
               className="cyber-chamfer border border-border/50 hover:border-accent/50 bg-transparent hover:bg-accent/5 text-muted-foreground hover:text-accent text-sm font-bold tracking-widest uppercase px-6 sm:px-10 py-3 sm:py-4 transition-all duration-200 flex items-center gap-3"
               style={{ fontFamily: 'JetBrains Mono, monospace' }}
             >
               <Mail className="w-4 h-4" />
               <span>Contact Us</span>
-            </button>
+            </Link>
           </div>
         </motion.div>
 
