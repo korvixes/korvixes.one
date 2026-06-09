@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { RefreshCw, Box, BarChart3, Binary, Layers, Sliders, Shield, Zap, Server, Network, ArrowRight } from 'lucide-react';
 import { Navbar } from "@/components/layout/Navbar"
 import { Footer } from "@/components/layout/Footer"
