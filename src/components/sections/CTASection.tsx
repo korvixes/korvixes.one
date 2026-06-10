@@ -73,7 +73,7 @@ export function CTASection() {
               className="group relative cyber-chamfer btn-shimmer border border-primary/60 hover:border-primary hover:glow-blue text-primary text-sm font-bold tracking-widest uppercase px-6 sm:px-10 py-3 sm:py-4 transition-all duration-200 flex items-center gap-3 overflow-hidden"
               style={{ fontFamily: 'JetBrains Mono, monospace' }}
             >
-              <span className="relative z-10">korvixes.one</span>
+              <span className="relative z-10">korvixes</span>
               <ChevronRight className="w-4 h-4 relative z-10 group-hover:translate-x-0.5 transition-transform" />
               <div className="absolute inset-0 overflow-hidden pointer-events-none">
                 <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-accent/70 to-transparent animate-beam" />

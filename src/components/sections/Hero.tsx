@@ -117,7 +117,7 @@ export function Hero() {
           <div className="flex items-center gap-2.5 px-4 py-1.5 cyber-chamfer-sm border border-primary/30 bg-primary/8 text-primary"
             style={{ fontFamily: 'JetBrains Mono, monospace' }}>
             <span className="w-1.5 h-1.5 rounded-full status-dot-green animate-blink inline-block shrink-0" />
-            <span className="text-xs font-medium tracking-[0.2em] uppercase">Industrial AI Platform — Now in Production</span>
+            <span className="text-xs font-medium tracking-[0.2em] uppercase">Industrial Simulation Platform. Now in Production</span>
           </div>
         </motion.div>
 

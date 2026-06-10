@@ -9,7 +9,7 @@ const pillars = [
     description:
       "A digital twin is a real-time virtual replica of a physical industrial system. Every sensor, valve, motor, and pipeline is mirrored in software — allowing engineers to see exactly what's happening without stepping on the factory floor.",
     metric: "1:1",
-    metricLabel: "Physical-to-digital mapping",
+    metricLabel: "1:1 Physical to digital mapping",
     color: "primary",
     tag: "CONCEPT",
   },

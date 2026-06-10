@@ -24,7 +24,7 @@ const plans = [
   },
   {
     name: "Industrial Pro",
-    tagline: "Full simulation engine + AI",
+    tagline: "Full simulation engine with predictive intelligence",
     price: "$159",
     period: "/month",
     description: "Built for engineering teams that need real-time simulation, AI predictions, and full operational visibility.",

@@ -19,7 +19,7 @@ const testimonials = [
     name: "Erik Nakamura",
     company: "PrecisionFab Industries",
     industry: "Industrial Manufacturing",
-    text: "The AI predictive modeling has fundamentally changed how we approach maintenance. We've moved from scheduled downtime to condition-based operations. Our OEE climbed from 78% to 94% within six months.",
+    text: "Predictive modeling has fundamentally changed how we approach maintenance. We've moved from scheduled downtime to condition-based operations. Our OEE climbed from 78% to 94% within six months.",
   },
   {
     name: "Dr. Priya Chandrasekhar",

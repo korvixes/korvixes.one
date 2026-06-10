@@ -8,9 +8,9 @@ import {
 const features = [
   { icon: Cpu, title: "Real-time Simulation Engine", description: "Physics-accurate models run in parallel with live operations. Predict system behavior at sub-millisecond resolution.", tag: "CORE ENGINE", accentColor: "primary" },
   { icon: Activity, title: "Industrial System Monitoring", description: "Continuous telemetry from thousands of sensors. Visualize temperature, pressure, flow, and vibration in one unified view.", tag: "MONITORING", accentColor: "accent" },
-  { icon: BrainCircuit, title: "Predictive Behavior Modeling", description: "Machine learning models trained on historical failure patterns detect anomalies days before they become critical.", tag: "AI/ML", accentColor: "primary" },
+  { icon: BrainCircuit, title: "Predictive Behavior Modeling", description: "Machine learning models trained on historical failure patterns detect anomalies days before they become critical.", tag: "MODELING", accentColor: "primary" },
   { icon: LineChart, title: "Machine Performance Visualization", description: "Rich dashboards for every machine in your facility. OEE, availability, performance, and quality scores at a glance.", tag: "ANALYTICS", accentColor: "accent" },
-  { icon: Bell, title: "Smart Alerts Simulation", description: "Configurable thresholds with intelligent suppression. Route alerts to the right engineer via email, SMS, or webhook.", tag: "ALERTING", accentColor: "accent" },
+  { icon: Bell, title: "Smart Alerts and Notifications", description: "Configurable thresholds with intelligent suppression. Route alerts to the right engineer via email, SMS, or webhook.", tag: "ALERTING", accentColor: "accent" },
   { icon: Layers, title: "Multi-layer System Modeling", description: "Model entire production chains — from individual sensors up to plant-wide energy flows. Full hierarchy support.", tag: "MODELING", accentColor: "primary" },
   { icon: Shield, title: "Fault Isolation & Root Cause", description: "When anomalies occur, Korvixes traces the causal chain automatically. Know exactly what caused the fault and why.", tag: "DIAGNOSTICS", accentColor: "accent" },
   { icon: Workflow, title: "Data-Driven Decision Insights", description: "Operational recommendations backed by simulation evidence. Shift from gut decisions to engineering-grade insights.", tag: "INTELLIGENCE", accentColor: "primary" },

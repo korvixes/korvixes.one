@@ -21,9 +21,9 @@ const capabilities = [
 // NVIDIA-style architecture diagram data
 const archLayers = [
   { label: "PRESENTATION LAYER", sublabel: "React · Framer Motion · Recharts", color: "#3BC4E8", icon: Globe },
-  { label: "SIMULATION ENGINE", sublabel: "Physics Models · State Machines · ML Inference", color: "#2A6BDB", icon: Cpu },
+  { label: "SIMULATION ENGINE", sublabel: "Physics Models · State Machines · Predictive Inference", color: "#2A6BDB", icon: Cpu },
   { label: "DATA INTEGRATION", sublabel: "IoT Streams · ERP · SCADA · PLC · MES", color: "#2A6BDB", icon: Activity },
-  { label: "NVIDIA AI CORE", sublabel: "Digital Twin SDK · GPU Compute · Parallel Simulation", color: "#3BC4E8", icon: Zap },
+  { label: "SIMULATION COMPUTE CORE", sublabel: "Digital Twin SDK · GPU Compute · Parallel Simulation", color: "#3BC4E8", icon: Zap },
 ]
 
 export function TechStack() {
@@ -68,7 +68,7 @@ export function TechStack() {
         >
           <div className="text-[9px] font-bold tracking-[0.25em] uppercase text-muted-foreground mb-6 text-center"
             style={{ fontFamily: 'JetBrains Mono, monospace' }}>
-            // Korvixes Architecture — Powered by NVIDIA SDK
+            // Korvixes Architecture — Powered by Advanced Compute Infrastructure
           </div>
           <div className="flex flex-col gap-2">
             {archLayers.map((layer, i) => (

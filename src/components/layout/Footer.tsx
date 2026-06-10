@@ -5,17 +5,17 @@ import { GitBranch, MessageSquare, Share2, Terminal, Hexagon, Activity, Cpu, Glo
 
 const footerLinks: Record<string, { label: string; href: string }[]> = {
   Platform: [
-    { label: "Overview", href: "/#product" },
-    { label: "Features", href: "/#features" },
-    { label: "Simulation Engine", href: "/#simulation" },
-    { label: "Integrations", href: "/#technology" },
+    { label: "Overview", href: "/" },
+    { label: "Features", href: "/features" },
+    { label: "Simulation Engine", href: "/features" },
+    { label: "Integrations", href: "/features" },
     { label: "Changelog", href: "/blog" },
   ],
   Solutions: [
     { label: "Manufacturing", href: "/solutions/manufacturing" },
-    { label: "Energy Systems", href: "/#use-cases" },
-    { label: "Smart Factory", href: "/#use-cases" },
-    { label: "Industrial IoT", href: "/#features" },
+    { label: "Energy Systems", href: "/solutions" },
+    { label: "Smart Factory", href: "/solutions" },
+    { label: "Industrial IoT", href: "/features" },
   ],
   Company: [
     { label: "About Us", href: "/about" },
@@ -145,7 +145,7 @@ export function Footer() {
                 <Terminal className="w-3 h-3 text-accent" />
                 <a href="#" className="text-[10px] text-accent tracking-widest uppercase hover:text-glow-cyan transition-all"
                   style={{ fontFamily: 'JetBrains Mono, monospace' }}>
-                  Developer API — Coming Soon
+                  Developer API
                 </a>
               </div>
 

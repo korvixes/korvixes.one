@@ -1,19 +1,21 @@
 import { useEffect, useRef } from "react"
 import { useLocation } from "react-router-dom"
 
+const sectionRoutes = new Set(["/features", "/solutions"])
+
 export function ScrollToTop() {
   const { pathname, hash } = useLocation()
   const prevHash = useRef(hash)
 
   useEffect(() => {
-    if (!hash) {
-      window.scrollTo(0, 0)
-    } else if (hash !== prevHash.current) {
+    if (hash) {
       const id = hash.replace("#", "")
       const el = document.getElementById(id)
       if (el) {
         el.scrollIntoView({ behavior: "smooth" })
       }
+    } else if (!sectionRoutes.has(pathname)) {
+      window.scrollTo(0, 0)
     }
     prevHash.current = hash
   }, [pathname, hash])
