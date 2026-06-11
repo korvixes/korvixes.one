@@ -16,6 +16,8 @@ import { CTASection } from "@/components/sections/CTASection"
 const sectionMap: Record<string, string> = {
   features: "features",
   solutions: "use-cases",
+  testimonials: "testimonials",
+  faq: "faq",
 }
 
 export function HomePage({ section: initialSection }: { section?: string }) {

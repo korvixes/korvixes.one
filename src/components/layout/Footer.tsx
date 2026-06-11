@@ -1,20 +1,19 @@
 import { useRef } from "react"
 import { motion, useInView } from "framer-motion"
 import { Link } from "react-router-dom"
-import { GitBranch, MessageSquare, Share2, Terminal, Hexagon, Activity, Cpu, Globe } from "lucide-react"
+import { Terminal, Hexagon, Activity, Cpu, Globe } from "lucide-react"
 
 const footerLinks: Record<string, { label: string; href: string }[]> = {
   Platform: [
+    { label: "FAQ", href: "/faq" },
+    { label: "Testimonials", href: "/testimonials" },
     { label: "Overview", href: "/" },
     { label: "Features", href: "/features" },
-    { label: "Simulation Engine", href: "/features" },
     { label: "Integrations", href: "/features" },
-    { label: "Changelog", href: "/blog" },
   ],
   Solutions: [
     { label: "Manufacturing", href: "/solutions/manufacturing" },
     { label: "Energy Systems", href: "/solutions" },
-    { label: "Smart Factory", href: "/solutions" },
     { label: "Industrial IoT", href: "/features" },
   ],
   Company: [
@@ -31,6 +30,60 @@ const footerLinks: Record<string, { label: string; href: string }[]> = {
     { label: "Compliance", href: "/compliance" },
   ],
 }
+
+const socialLinks: { name: string; href: string; icon: React.ReactNode }[] = [
+  {
+    name: "LinkedIn",
+    href: "https://www.linkedin.com/company/korvixis-ai/",
+    icon: (
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" className="w-3.5 h-3.5">
+        <rect x="2" y="2" width="20" height="20" rx="2" ry="2" />
+        <path d="M6 9h2v6H6z" />
+        <path d="M7 6.5a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" />
+        <path d="M10 9h2v1a2 2 0 0 1 2-2 2 2 0 0 1 2 2v4h-2v-4a1 1 0 0 0-1-1 1 1 0 0 0-1 1v4h-2V9z" />
+      </svg>
+    ),
+  },
+  {
+    name: "Facebook",
+    href: "https://www.facebook.com/KorvixisAI/",
+    icon: (
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" className="w-3.5 h-3.5">
+        <circle cx="12" cy="12" r="10" />
+        <path d="M14.5 6.5H13a3 3 0 0 0-3 3v2H8v2.5h2V21h2.5v-7h2L14 12h-2V9.5a.5.5 0 0 1 .5-.5h1.5z" />
+      </svg>
+    ),
+  },
+  {
+    name: "X",
+    href: "https://x.com/KorvixisAI/",
+    icon: (
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-3.5 h-3.5">
+        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+      </svg>
+    ),
+  },
+  {
+    name: "Pinterest",
+    href: "https://www.pinterest.com/KorvixisAI/",
+    icon: (
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" className="w-3.5 h-3.5">
+        <circle cx="12" cy="12" r="10" />
+        <path d="M11 14.5c-.5 2.5-1 4-2.5 5 0-1 .5-2 1-3.5 0-1.5-.5-3-.5-4.5 0-2 1.5-3.5 3-3.5s3 1 3 3c0 2-1 4-2 4s-1.5-.5-1.5-1.5.5-2 1-3-.5-2-1.5-2-1.5 1-1.5 2.5v.5c0 .5 0 1 .5 1" />
+      </svg>
+    ),
+  },
+  {
+    name: "YouTube",
+    href: "https://www.youtube.com/@KorvixisAI",
+    icon: (
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" className="w-3.5 h-3.5">
+        <rect x="2" y="6" width="20" height="12" rx="3" />
+        <path d="M10 9.5v5l5-2.5z" fill="currentColor" stroke="none" />
+      </svg>
+    ),
+  },
+]
 
 const systemStats = [
   { label: "UPTIME", value: "99.98%", icon: Activity },
@@ -149,14 +202,21 @@ export function Footer() {
                 </a>
               </div>
 
+              <h4 className="text-[9px] font-bold tracking-[0.25em] uppercase text-muted-foreground mb-3"
+                style={{ fontFamily: 'JetBrains Mono, monospace' }}>
+                // Connect
+              </h4>
               <div className="flex items-center gap-2">
-                {[GitBranch, MessageSquare, Share2].map((Icon, i) => (
+                {socialLinks.map(({ name, href, icon }) => (
                   <a
-                    key={i}
-                    href="#"
-                    className="w-8 h-8 cyber-chamfer-sm border border-border/40 flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary/50 hover:glow-blue-sm transition-all duration-200"
+                    key={name}
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-8 h-8 cyber-chamfer-sm border border-border/40 flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary/50 hover:glow-blue-sm hover:scale-110 transition-all duration-200"
+                    title={name}
                   >
-                    <Icon className="w-3.5 h-3.5" strokeWidth={1.5} />
+                    {icon}
                   </a>
                 ))}
               </div>

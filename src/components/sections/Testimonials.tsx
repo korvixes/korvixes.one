@@ -34,7 +34,7 @@ export function Testimonials() {
   const isInView = useInView(ref, { once: true, margin: "-60px" })
 
   return (
-    <section className="relative py-16 md:py-28 overflow-hidden" ref={ref}>
+    <section id="testimonials" className="relative py-16 md:py-28 overflow-hidden" ref={ref}>
       {/* Background */}
       <div className="absolute inset-0 bg-grid opacity-30" />
       <div className="absolute inset-0" style={{

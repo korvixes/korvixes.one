@@ -48,6 +48,8 @@ export function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/features" element={<HomePage section="features" />} />
         <Route path="/solutions" element={<HomePage section="solutions" />} />
+        <Route path="/testimonials" element={<HomePage section="testimonials" />} />
+        <Route path="/faq" element={<HomePage section="faq" />} />
         <Route path="/pricing" element={<HomePage />} />
         <Route path="/payment-success" element={<PaymentSuccessPage />} />
         {/* Legal */}
