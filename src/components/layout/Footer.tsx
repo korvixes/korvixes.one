@@ -13,7 +13,7 @@ const footerLinks: Record<string, { label: string; href: string }[]> = {
   Solutions: [
     { label: "Manufacturing", href: "/solutions/manufacturing" },
     { label: "Energy Systems", href: "/solutions" },
-    { label: "Industrial IoT", href: "/features" },
+    { label: "Industrial IoT", href: "/product" },
   ],
   Company: [
     { label: "About", href: "/about" },
@@ -186,10 +186,10 @@ export function Footer() {
               {/* Docs link */}
               <div className="flex items-center gap-2 mb-5 px-3 py-2 border border-border/40 bg-background/50 cyber-chamfer-sm w-fit group hover:border-primary/40 transition-all duration-200">
                 <Terminal className="w-3 h-3 text-accent" />
-                <a href="#" className="text-[10px] text-accent tracking-widest uppercase hover:text-glow-cyan transition-all"
+                <Link to="/product" className="text-[10px] text-accent tracking-widest uppercase hover:text-glow-cyan transition-all"
                   style={{ fontFamily: 'JetBrains Mono, monospace' }}>
                   Developer API
-                </a>
+                </Link>
               </div>
 
               <h4 className="text-[9px] font-bold tracking-[0.25em] uppercase text-muted-foreground mb-3"

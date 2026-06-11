@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { RefreshCw, Box, BarChart3, Binary, Layers, Sliders, Shield, Zap, Server, Network, ArrowRight } from 'lucide-react';
 import { Navbar } from "@/components/layout/Navbar"
 import { Footer } from "@/components/layout/Footer"
+import heroBg from "@/assets/hero-bg.webp"
 
 export default function KorvixesProductPage() {
 const [activeLayer, setActiveLayer] = useState<number>(0);
@@ -56,9 +57,13 @@ return (
 <div className="absolute top-[20%] left-[10%] w-80 h-80 bg-[#2A6BDB]/10 rounded-full blur-[100px] animate-pulse"></div>
 <div className="absolute bottom-[30%] right-[10%] w-96 h-96 bg-[#3BC4E8]/10 rounded-full blur-[130px] animate-pulse delay-1000"></div>
 </div>
-{/* SECTION 1: INDUSTRIAL DIGITAL TWIN HERO */}
-<section className="relative min-h-screen flex items-center justify-center px-6 lg:px-16 overflow-hidden border-b border-[#10141E] z-10 bg-[url('/hero-bg.jpg')] bg-cover bg-center">
-{/* Dark overlay for readability */}
+      {/* SECTION 1: INDUSTRIAL DIGITAL TWIN HERO */}
+      <section className="relative min-h-screen flex items-center justify-center px-6 lg:px-16 overflow-hidden border-b border-[#10141E] z-10">
+        {/* Hero background image with white-edge crop */}
+        <div className="absolute inset-0 overflow-hidden">
+          <img src={heroBg} alt="" className="w-full h-full object-cover scale-110" />
+        </div>
+        {/* Dark overlay for readability */}
 <div className="absolute inset-0 bg-black/60"></div>
 <div className="max-w-6xl mx-auto w-full relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center pt-12">
 {/* LEFT CONTENT */}

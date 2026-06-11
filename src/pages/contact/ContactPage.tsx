@@ -5,6 +5,7 @@ import { PageLayout } from "@/components/layout/PageLayout"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Mail, Clock, Server, Wifi, Send, Terminal, ChevronRight, Shield, ShieldOff } from "lucide-react"
+import { SupportInfoModal } from "@/components/ui/SupportInfoModal"
 
 const isDev = import.meta.env.DEV || ["localhost", "127.0.0.1"].includes(window.location.hostname)
 const TURNSTILE_SITEKEY = "0x4AAAAAADisk6WJzfjcIaPv"
@@ -25,9 +26,9 @@ interface TurnstileObject {
 const turnstile = (): TurnstileObject | undefined => (window as any).turnstile
 
 const supportCategories = [
-  { label: "Technical Support", icon: Server, description: "Platform issues, integration help, deployment assistance" },
-  { label: "Enterprise Inquiry", icon: Shield, description: "Volume licensing, custom SLAs, dedicated infrastructure" },
-  { label: "Simulation Demo", icon: Wifi, description: "Platform walkthrough, use case evaluation, PoC planning" },
+  { label: "Technical Support", iconSrc: "/assets/42.svg", description: "Platform issues, integration help, deployment assistance" },
+  { label: "Enterprise Inquiry", iconSrc: "/assets/43.svg", description: "Volume licensing, custom SLAs, dedicated infrastructure" },
+  { label: "Simulation Demo", iconSrc: "/assets/44.svg", description: "Platform walkthrough, use case evaluation, PoC planning" },
 ]
 
 const stagger = {
@@ -59,6 +60,155 @@ export function ContactPage() {
   const turnstileWidgetId = useRef<string | undefined>(undefined)
   const turnstileInitDone = useRef(false)
   const turnstileFailed = useRef(false)
+
+  const [supportModal, setSupportModal] = useState<{ open: boolean; index: number }>({ open: false, index: 0 })
+
+  const supportModalData = [
+    {
+      title: "Technical Support",
+      iconSrc: "/assets/42.svg",
+      sections: [
+        {
+          label: "Deployment Support",
+          items: [
+            "Guided platform deployment across cloud, on-premise, or hybrid environments",
+            "Infrastructure sizing and architecture recommendations for your scale",
+            "Kubernetes and Docker container orchestration setup assistance",
+            "CI/CD pipeline integration for continuous simulation deployment",
+          ],
+        },
+        {
+          label: "Platform Troubleshooting",
+          items: [
+            "Real-time system diagnostics and performance profiling tools",
+            "Log-based anomaly detection with automated root cause suggestions",
+            "Telemetry pipeline debugging and data ingestion verification",
+            "Known issue database with resolution playbooks",
+          ],
+        },
+        {
+          label: "Integration Assistance",
+          items: [
+            "Native connectors for SCADA, PLC, MES, ERP, and IoT platforms",
+            "REST API documentation and SDK samples for custom integrations",
+            "Webhook configuration for event-driven automation workflows",
+            "OPC-UA, MQTT, Modbus TCP protocol setup guidance",
+          ],
+        },
+        {
+          label: "Response Expectations",
+          items: [
+            "Standard support: 48-hour initial response (business days)",
+            "Priority support: 4-hour response with SLA-backed resolution",
+            "Critical incident escalation available 24/7 for production outages",
+            "Dedicated support engineer assigned to your account",
+          ],
+        },
+        {
+          label: "Contact Guidance",
+          items: [
+            "Use the secure transmission form above for new support requests",
+            "Existing customers may reach their assigned engineer directly",
+            "Include system logs and telemetry snapshots for faster diagnosis",
+            "Enterprise customers: contact through your dedicated support channel",
+          ],
+        },
+      ],
+    },
+    {
+      title: "Enterprise Inquiry",
+      iconSrc: "/assets/43.svg",
+      sections: [
+        {
+          label: "Enterprise Onboarding",
+          items: [
+            "Structured onboarding program with dedicated solutions engineer",
+            "System architecture review and infrastructure planning session",
+            "Pilot deployment with defined success criteria and milestones",
+            "Training and certification for your engineering team",
+          ],
+        },
+        {
+          label: "Dedicated Infrastructure",
+          items: [
+            "Isolated simulation nodes with guaranteed compute capacity",
+            "Single-tenant deployment options for sensitive environments",
+            "Custom scaling architecture tailored to your operational footprint",
+            "Disaster recovery and high-availability configurations",
+          ],
+        },
+        {
+          label: "Volume Licensing",
+          items: [
+            "Flexible per-node, per-site, or enterprise-wide licensing models",
+            "Multi-year agreements with predictable cost structures",
+            "Usage-based scaling options for growing operations",
+            "Centralized license management and user administration",
+          ],
+        },
+        {
+          label: "SLA Overview",
+          items: [
+            "99.99% platform uptime guarantee for enterprise deployments",
+            "Guaranteed sub-2ms simulation latency under load",
+            "4-hour critical issue response, 24/7/365 coverage",
+            "Quarterly business reviews with performance reporting",
+          ],
+        },
+        {
+          label: "Partnership Information",
+          items: [
+            "Technology partnership opportunities for ISVs and SI partners",
+            "Co-marketing and co-selling programs with dedicated support",
+            "Joint solution development for industry-specific use cases",
+            "Access to partner portal with resources and deal registration",
+          ],
+        },
+      ],
+    },
+    {
+      title: "Simulation Demo",
+      iconSrc: "/assets/44.svg",
+      sections: [
+        {
+          label: "Demo Process",
+          items: [
+            "Initial consultation to understand your operational environment",
+            "Live platform walkthrough tailored to your industry use case",
+            "Hands-on session with your own telemetry data (optional)",
+            "Q&A with our simulation engineering team",
+          ],
+        },
+        {
+          label: "Platform Walkthrough",
+          items: [
+            "Digital twin creation and real-time simulation engine overview",
+            "Dashboard configuration and custom metric setup demonstration",
+            "Alert and notification system configuration walkthrough",
+            "Integration capabilities and API demonstration",
+          ],
+        },
+        {
+          label: "Proof of Concept",
+          items: [
+            "Structured PoC program with defined scope and success criteria",
+            "Dedicated engineering support during the evaluation period",
+            "Integration with your existing infrastructure and data sources",
+            "Detailed findings report with ROI analysis and recommendations",
+          ],
+        },
+        {
+          label: "Evaluation Workflow",
+          items: [
+            "Typical evaluation period: 14–30 days depending on scope",
+            "Weekly check-ins with your solutions engineer",
+            "Performance benchmarking against your existing tools",
+            "Smooth transition path from evaluation to production deployment",
+          ],
+        },
+      ],
+    },
+  ]
 
   const loading = state.submitting
   const formError = state.errors
@@ -380,8 +530,8 @@ export function ContactPage() {
               </div>
 
               <div className="space-y-4">
-                <div className="flex items-center gap-3 p-3 border border-border/30 bg-background/30">
-                  <Mail className="w-4 h-4 text-accent shrink-0" strokeWidth={1.5} />
+                <div className="flex items-center gap-3 p-3 border border-border/30 bg-background/30 hover:border-primary/30 hover:bg-primary/5 transition-all duration-300 group">
+                  <Mail className="w-4 h-4 text-accent shrink-0 group-hover:text-glow-cyan transition-all duration-300" strokeWidth={1.5} />
                   <div>
                     <div className="text-[9px] text-muted-foreground tracking-widest uppercase mb-0.5" style={{ fontFamily: 'JetBrains Mono, monospace' }}>
                       Primary Channel
@@ -392,8 +542,8 @@ export function ContactPage() {
                   </div>
                 </div>
 
-                <div className="flex items-center gap-3 p-3 border border-border/30 bg-background/30">
-                  <Clock className="w-4 h-4 text-accent shrink-0" strokeWidth={1.5} />
+                <div className="flex items-center gap-3 p-3 border border-border/30 bg-background/30 hover:border-primary/30 hover:bg-primary/5 transition-all duration-300 group">
+                  <Clock className="w-4 h-4 text-accent shrink-0 group-hover:text-glow-cyan transition-all duration-300" strokeWidth={1.5} />
                   <div>
                     <div className="text-[9px] text-muted-foreground tracking-widest uppercase mb-0.5" style={{ fontFamily: 'JetBrains Mono, monospace' }}>
                       Response Time
@@ -404,8 +554,8 @@ export function ContactPage() {
                   </div>
                 </div>
 
-                <div className="flex items-center gap-3 p-3 border border-border/30 bg-background/30">
-                  <Mail className="w-4 h-4 text-accent shrink-0" strokeWidth={1.5} />
+                <div className="flex items-center gap-3 p-3 border border-border/30 bg-background/30 hover:border-primary/30 hover:bg-primary/5 transition-all duration-300 group">
+                  <Mail className="w-4 h-4 text-accent shrink-0 group-hover:text-glow-cyan transition-all duration-300" strokeWidth={1.5} />
                   <div>
                     <div className="text-[9px] text-muted-foreground tracking-widest uppercase mb-0.5" style={{ fontFamily: 'JetBrains Mono, monospace' }}>
                       Corporate Office
@@ -416,8 +566,8 @@ export function ContactPage() {
                   </div>
                 </div>
 
-                <div className="flex items-center gap-3 p-3 border border-border/30 bg-background/30">
-                  <Terminal className="w-4 h-4 text-accent shrink-0" strokeWidth={1.5} />
+                <div className="flex items-center gap-3 p-3 border border-border/30 bg-background/30 hover:border-primary/30 hover:bg-primary/5 transition-all duration-300 group">
+                  <Terminal className="w-4 h-4 text-accent shrink-0 group-hover:text-glow-cyan transition-all duration-300" strokeWidth={1.5} />
                   <div>
                     <div className="text-[9px] text-muted-foreground tracking-widest uppercase mb-0.5" style={{ fontFamily: 'JetBrains Mono, monospace' }}>
                       Phone
@@ -428,8 +578,8 @@ export function ContactPage() {
                   </div>
                 </div>
 
-                <div className="flex items-center gap-3 p-3 border border-border/30 bg-background/30">
-                  <Server className="w-4 h-4 text-accent shrink-0" strokeWidth={1.5} />
+                <div className="flex items-center gap-3 p-3 border border-border/30 bg-background/30 hover:border-primary/30 hover:bg-primary/5 transition-all duration-300 group">
+                  <Server className="w-4 h-4 text-accent shrink-0 group-hover:text-glow-cyan transition-all duration-300" strokeWidth={1.5} />
                   <div>
                     <div className="text-[9px] text-muted-foreground tracking-widest uppercase mb-0.5" style={{ fontFamily: 'JetBrains Mono, monospace' }}>
                       System Availability
@@ -473,11 +623,12 @@ export function ContactPage() {
                     initial={{ opacity: 0, x: -10 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.4, delay: 0.5 + i * 0.1 }}
-                    className="group p-3 border border-border/30 hover:border-primary/30 bg-background/30 hover:bg-background/50 transition-all duration-200 cursor-default"
+                    className="group p-3 border border-border/30 hover:border-primary/30 bg-background/30 hover:bg-background/50 transition-all duration-200 cursor-pointer"
+                    onClick={() => setSupportModal({ open: true, index: i })}
                   >
                     <div className="flex items-center gap-3">
-                      <div className="w-8 h-8 cyber-chamfer-sm bg-primary/8 border border-primary/20 flex items-center justify-center group-hover:border-primary/40 group-hover:bg-primary/15 transition-all duration-200">
-                        <cat.icon className="w-3.5 h-3.5 text-primary" strokeWidth={1.5} />
+                      <div className="w-8 h-8 cyber-chamfer-sm bg-primary/8 border border-primary/20 flex items-center justify-center group-hover:border-primary/50 group-hover:bg-primary/20 group-hover:glow-blue-sm transition-all duration-300">
+                        <img src={cat.iconSrc} alt="" className="w-5 h-5 object-contain" />
                       </div>
                       <div className="flex-1 min-w-0">
                         <div className="text-[11px] font-bold text-foreground/90 tracking-wide uppercase" style={{ fontFamily: 'Orbitron, monospace' }}>
@@ -496,6 +647,13 @@ export function ContactPage() {
           </motion.div>
         </div>
       </div>
+      <SupportInfoModal
+        open={supportModal.open}
+        onOpenChange={(open) => setSupportModal((prev) => ({ ...prev, open }))}
+        title={supportModalData[supportModal.index].title}
+        icon={supportModalData[supportModal.index].iconSrc}
+        sections={supportModalData[supportModal.index].sections}
+      />
     </PageLayout>
   )
 }

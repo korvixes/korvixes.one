@@ -1,6 +1,6 @@
 import { PageLayout } from "@/components/layout/PageLayout"
 import { motion } from "framer-motion"
-import { Hexagon, Cpu, Globe, Zap, Users, Target } from "lucide-react"
+import { Hexagon, Cpu, Globe, Users } from "lucide-react"
 
 const timeline = [
   { year: "2019", event: "Founded", detail: "Korvixes founded by a team of industrial engineers and simulation scientists from Siemens, leading technology institutions, and MIT CSAIL." },
@@ -13,19 +13,19 @@ const timeline = [
 ]
 
 const values = [
-  { icon: Target, title: "Precision First", text: "Every simulation output must be defensible. We hold ourselves to 99.8% accuracy across all workloads — not as a marketing claim but as an engineering constraint." },
-  { icon: Globe, title: "Industrial Scale", text: "We build for the world's most demanding environments: automotive plants, energy grids, semiconductor fabs. Korvixes earns its place in critical infrastructure." },
-  { icon: Zap, title: "Relentless Performance", text: "Sub-millisecond latency isn't a feature — it's a prerequisite. Our engineering culture prizes speed and reliability above all else." },
-  { icon: Users, title: "Customer Partnership", text: "We don't sell software. We embed with your engineering teams, understand your processes, and build long-term operational capability." },
+  { iconSrc: "/assets/32.svg", title: "Precision First", text: "Every simulation output must be defensible. We hold ourselves to 99.8% accuracy across all workloads — not as a marketing claim but as an engineering constraint." },
+  { iconSrc: "/assets/33.svg", title: "Industrial Scale", text: "We build for the world's most demanding environments: automotive plants, energy grids, semiconductor fabs. Korvixes earns its place in critical infrastructure." },
+  { iconSrc: "/assets/34.svg", title: "Relentless Performance", text: "Sub-millisecond latency isn't a feature — it's a prerequisite. Our engineering culture prizes speed and reliability above all else." },
+  { iconSrc: "/assets/35.svg", title: "Customer Partnership", text: "We don't sell software. We embed with your engineering teams, understand your processes, and build long-term operational capability." },
 ]
 
 const leadership = [
-  { name: "Dr. Elena Marsh", role: "CEO & Co-Founder", background: "Former Principal Engineer, Siemens Digital Industries. PhD in Control Systems, MIT." },
-  { name: "James Okafor", role: "CTO & Co-Founder", background: "Former Research Scientist, NVIDIA Omniverse. MS in Computational Physics, Stanford." },
-  { name: "Priya Nair", role: "Chief Product Officer", background: "Former VP Product, PTC Inc. 15 years in industrial software product strategy." },
-  { name: "Marcus Wei", role: "Chief Security Officer", background: "Former NSA Technical Director. Led critical infrastructure cybersecurity programs for 12 years." },
-  { name: "Sarah Donovan", role: "VP Engineering", background: "Former Engineering Director, Rockwell Automation. Expert in real-time systems and OT/IT convergence." },
-  { name: "Ahmed Al-Rashidi", role: "VP Sales & Partnerships", background: "Former Head of Enterprise Sales, ANSYS. Built partner ecosystem across 30+ countries." },
+  { name: "Dr. Amara Osei", imgSrc: "/assets/Dr. Amara Osei.svg", role: "CEO & Co-Founder", background: "Former Principal Engineer, Siemens Digital Industries. PhD in Control Systems, MIT." },
+  { name: "Mr. James Harrington", imgSrc: "/assets/Mr. James Harrington.svg", role: "CTO & Co-Founder", background: "Former Research Scientist, NVIDIA Omniverse. MS in Computational Physics, Stanford." },
+  { name: "Dr. Vikram Nair", imgSrc: "/assets/Dr. Vikram Nair.svg", role: "Chief Product Officer", background: "Former VP Product, PTC Inc. 15 years in industrial software product strategy." },
+  { name: "Mrs. Sophie Whitfield", imgSrc: "/assets/Mrs. Sophie Whitfield.svg", role: "Chief Security Officer", background: "Former NSA Technical Director. Led critical infrastructure cybersecurity programs for 12 years." },
+  { name: "Miss Lauren Mitchell", imgSrc: "/assets/Miss Lauren Mitchell.svg", role: "VP Engineering", background: "Former Engineering Director, Rockwell Automation. Expert in real-time systems and OT/IT convergence." },
+  { name: "Mr. Ethan Cole", imgSrc: "/assets/Mr. Ethan Cole.svg", role: "VP Sales & Partnerships", background: "Former Head of Enterprise Sales, ANSYS. Built partner ecosystem across 30+ countries." },
 ]
 
 export function AboutUsPage() {
@@ -68,9 +68,9 @@ export function AboutUsPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.4, delay: i * 0.08 }}
-            className="hud-panel p-5 text-center hover:border-primary/30 transition-colors"
+            className="hud-panel p-5 text-center hover:border-primary/40 transition-all duration-300 group"
           >
-            <stat.icon className="w-4 h-4 text-primary mx-auto mb-3" strokeWidth={1} />
+            <stat.icon className="w-4 h-4 text-primary mx-auto mb-3 group-hover:text-glow-blue transition-all duration-300" strokeWidth={1} />
             <div className="text-2xl font-black gradient-text" style={{ fontFamily: 'Orbitron, monospace' }}>{stat.value}</div>
             <div className="text-[10px] text-muted-foreground tracking-widest uppercase mt-1" style={{ fontFamily: 'JetBrains Mono, monospace' }}>{stat.label}</div>
           </motion.div>
@@ -119,11 +119,11 @@ export function AboutUsPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: i * 0.08 }}
-              className="hud-panel p-6 hover:border-primary/30 transition-colors group"
+              className="hud-panel p-6 hover:border-primary/40 transition-all duration-300 group"
             >
               <div className="flex items-center gap-3 mb-3">
-                <div className="w-8 h-8 cyber-chamfer-sm bg-primary/10 border border-primary/30 flex items-center justify-center group-hover:border-primary/50 transition-colors">
-                  <value.icon className="w-4 h-4 text-primary" strokeWidth={1.5} />
+                <div className="w-8 h-8 cyber-chamfer-sm bg-primary/8 border border-primary/20 flex items-center justify-center group-hover:bg-primary/20 group-hover:border-primary/50 group-hover:glow-blue-sm transition-all duration-300">
+                  <img src={value.iconSrc} alt="" className="w-5 h-5 object-contain" />
                 </div>
                 <h3 className="text-xs font-bold text-foreground/90 tracking-wide uppercase" style={{ fontFamily: 'Orbitron, monospace' }}>{value.title}</h3>
               </div>
@@ -144,12 +144,10 @@ export function AboutUsPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: i * 0.07 }}
-              className="hud-panel p-5 hover:border-primary/30 transition-colors"
+              className="hud-panel p-5 hover:border-primary/40 transition-all duration-300"
             >
-              <div className="w-10 h-10 cyber-chamfer-sm bg-primary/8 border border-primary/25 flex items-center justify-center mb-4">
-                <span className="text-sm font-bold text-primary" style={{ fontFamily: 'Orbitron, monospace' }}>
-                  {person.name.split(' ').map(n => n[0]).join('').slice(0, 2)}
-                </span>
+              <div className="w-12 h-12 cyber-chamfer-sm bg-primary/8 border border-primary/25 flex items-center justify-center mb-4 overflow-hidden group-hover:border-primary/50 group-hover:bg-primary/20 group-hover:glow-blue-sm transition-all duration-300">
+                <img src={person.imgSrc} alt={person.name} className="w-full h-full object-cover" />
               </div>
               <div className="text-sm font-bold text-foreground/90 mb-1" style={{ fontFamily: 'Orbitron, monospace' }}>{person.name}</div>
               <div className="text-[10px] text-accent/80 tracking-widest uppercase mb-3" style={{ fontFamily: 'JetBrains Mono, monospace' }}>{person.role}</div>

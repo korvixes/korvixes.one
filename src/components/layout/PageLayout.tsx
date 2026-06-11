@@ -3,7 +3,7 @@ import { motion } from "framer-motion"
 import { Link } from "react-router-dom"
 import { Navbar } from "./Navbar"
 import { Footer } from "./Footer"
-import { ArrowLeft, Hexagon } from "lucide-react"
+import { ArrowLeft } from "lucide-react"
 
 interface PageLayoutProps {
   children: ReactNode
@@ -43,15 +43,15 @@ export function PageLayout({ children, title, subtitle, badge, backHref = "/" }:
               </Link>
             </motion.div>
 
-            <div className="flex items-start gap-4">
-              <motion.div
-                initial={{ opacity: 0, scale: 0.8 }}
+            <div className="flex items-start gap-5">
+              <motion.img
+                initial={{ opacity: 0, scale: 0.85 }}
                 animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, delay: 0.1 }}
-                className="w-10 h-10 cyber-chamfer-sm bg-primary/10 border border-primary/40 flex items-center justify-center shrink-0 mt-1"
-              >
-                <Hexagon className="w-5 h-5 text-primary" strokeWidth={1} />
-              </motion.div>
+                transition={{ duration: 0.6, delay: 0.1 }}
+                src="/assets/1.svg"
+                alt=""
+                className="w-8 h-8 object-contain shrink-0 mt-1.5 opacity-50 hover:opacity-80 transition-opacity duration-500"
+              />
 
               <div>
                 {badge && (
