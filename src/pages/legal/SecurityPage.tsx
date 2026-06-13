@@ -148,11 +148,27 @@ export function SecurityPage() {
             Korvixes operates a responsible disclosure program. Security researchers who discover vulnerabilities in our platform are encouraged to report them privately before public disclosure. We commit to acknowledging reports within 48 hours, providing status updates, and issuing CVEs where applicable.
           </p>
           <p className="text-xs text-muted-foreground leading-relaxed" style={{ fontFamily: 'JetBrains Mono, monospace' }}>
-            Report security vulnerabilities to: <span className="text-accent">security@korvixes.io</span>{" "}
-            (PGP key available at <span className="text-accent">korvixes.io/.well-known/security.txt</span>). Our bug bounty program is managed through HackerOne with rewards up to $50,000 for critical findings.
+            Report security vulnerabilities to: <span className="text-accent">connect@korvixes.one</span>{" "}
+            (PGP key available at <span className="text-accent">korvixes.one/.well-known/security.txt</span>). Our bug bounty program is managed through HackerOne with rewards up to $50,000 for critical findings.
           </p>
         </div>
       </motion.div>
+
+      {/* Contact Us */}
+      <div className="mt-16 p-6 border border-accent/20 bg-accent/5 cyber-chamfer">
+        <h3 className="text-xs font-bold text-accent tracking-widest uppercase mb-3" style={{ fontFamily: 'Orbitron, monospace' }}>
+          Contact Us
+        </h3>
+        <div className="text-xs text-muted-foreground leading-relaxed space-y-1" style={{ fontFamily: 'JetBrains Mono, monospace' }}>
+          <p>Korvixis AI Inc</p>
+          <p>Founder &amp; CEO: Vikram Anand</p>
+          <p>1 Market Plaza, Floor 11</p>
+          <p>San Francisco, CA 94105, USA</p>
+          <p>Phone: +1 (415) 555-0166</p>
+          <p>Email: <span className="text-accent">connect@korvixes.one</span></p>
+          <p>Website: <span className="text-accent">https://korvixes.one</span></p>
+        </div>
+      </div>
 
       <div className="p-6 border border-[#00e676]/20 bg-[#00e676]/5 cyber-chamfer">
         <div className="flex items-center gap-2 mb-3">

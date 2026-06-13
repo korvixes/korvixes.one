@@ -2,6 +2,7 @@ import { useRef } from "react"
 import { motion, useInView } from "framer-motion"
 import { Link } from "react-router-dom"
 import { Terminal, Activity, Cpu, Globe } from "lucide-react"
+import headerLogo from "@/assets/branding/logo-header.webp"
 import footerLogo from "@/assets/branding/logo-footer.webp"
 
 const footerLinks: Record<string, { label: string; href: string }[]> = {
@@ -35,7 +36,7 @@ const socialLinks: { name: string; href: string; icon: React.ReactNode }[] = [
     name: "LinkedIn",
     href: "https://www.linkedin.com/company/korvixis-ai/",
     icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" className="w-3.5 h-3.5">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
         <rect x="2" y="2" width="20" height="20" rx="2" ry="2" />
         <path d="M6 9h2v6H6z" />
         <path d="M7 6.5a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" />
@@ -47,7 +48,7 @@ const socialLinks: { name: string; href: string; icon: React.ReactNode }[] = [
     name: "Facebook",
     href: "https://www.facebook.com/KorvixisAI/",
     icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" className="w-3.5 h-3.5">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
         <circle cx="12" cy="12" r="10" />
         <path d="M14.5 6.5H13a3 3 0 0 0-3 3v2H8v2.5h2V21h2.5v-7h2L14 12h-2V9.5a.5.5 0 0 1 .5-.5h1.5z" />
       </svg>
@@ -57,7 +58,7 @@ const socialLinks: { name: string; href: string; icon: React.ReactNode }[] = [
     name: "X",
     href: "https://x.com/KorvixisAI/",
     icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-3.5 h-3.5">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
         <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
       </svg>
     ),
@@ -66,7 +67,7 @@ const socialLinks: { name: string; href: string; icon: React.ReactNode }[] = [
     name: "Pinterest",
     href: "https://www.pinterest.com/KorvixisAI/",
     icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" className="w-3.5 h-3.5">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
         <circle cx="12" cy="12" r="10" />
         <path d="M11 14.5c-.5 2.5-1 4-2.5 5 0-1 .5-2 1-3.5 0-1.5-.5-3-.5-4.5 0-2 1.5-3.5 3-3.5s3 1 3 3c0 2-1 4-2 4s-1.5-.5-1.5-1.5.5-2 1-3-.5-2-1.5-2-1.5 1-1.5 2.5v.5c0 .5 0 1 .5 1" />
       </svg>
@@ -76,7 +77,7 @@ const socialLinks: { name: string; href: string; icon: React.ReactNode }[] = [
     name: "YouTube",
     href: "https://www.youtube.com/@KorvixisAI",
     icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" className="w-3.5 h-3.5">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
         <rect x="2" y="6" width="20" height="12" rx="3" />
         <path d="M10 9.5v5l5-2.5z" fill="currentColor" stroke="none" />
       </svg>
@@ -170,22 +171,21 @@ export function Footer() {
               transition={{ duration: 0.6 }}
               className="mb-10"
             >
-              <Link to="/" className="flex items-center mb-5 w-fit group">
-              <img
-                src={footerLogo}
-                alt="Korvixes"
-                className="h-10 w-auto object-contain opacity-80 group-hover:opacity-100 group-hover:brightness-110 transition-all duration-300"
-              />
-            </Link>
-              <p className="text-xs text-muted-foreground leading-relaxed mb-6 max-w-xs tracking-wide"
+              <Link to="/" className="flex items-start mb-5 w-fit group">
+                <img
+                  src={headerLogo}
+                  alt="Korvixes"
+                  className="h-8 w-auto object-contain opacity-80 group-hover:opacity-100 group-hover:brightness-110 transition-all duration-300"
+                />
+              </Link>
+              <p className="text-[10px] text-muted-foreground leading-relaxed mb-1 max-w-xs tracking-wide"
                 style={{ fontFamily: 'JetBrains Mono, monospace' }}>
-                Digital Twin & Industrial Simulation Platform.
-                The intelligence layer for modern industrial operations.
+                Digital Twin & Industrial Simulation Platform
               </p>
 
               {/* Docs link */}
               <div className="flex items-center gap-2 mb-5 px-3 py-2 border border-border/40 bg-background/50 cyber-chamfer-sm w-fit group hover:border-primary/40 transition-all duration-200">
-                <Terminal className="w-3 h-3 text-accent" />
+                <Terminal className="w-5 h-5 text-accent" />
                 <Link to="/product" className="text-[10px] text-accent tracking-widest uppercase hover:text-glow-cyan transition-all"
                   style={{ fontFamily: 'JetBrains Mono, monospace' }}>
                   Developer API
@@ -203,7 +203,7 @@ export function Footer() {
                     href={href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-8 h-8 cyber-chamfer-sm border border-border/40 flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary/50 hover:glow-blue-sm hover:scale-110 transition-all duration-200"
+                    className="w-10 h-10 cyber-chamfer-sm border border-border/40 flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary/50 hover:glow-blue-sm hover:scale-110 transition-all duration-200"
                     title={name}
                   >
                     {icon}
@@ -290,7 +290,7 @@ export function Footer() {
                 {systemStats.map((stat, i) => (
                   <div key={stat.label}
                     className={`flex flex-col items-center gap-1 py-3 px-2 ${i < 2 ? 'border-r border-primary/10' : ''}`}>
-                    <stat.icon className="w-3 h-3 text-primary/60" strokeWidth={1.5} />
+                    <stat.icon className="w-5 h-5 text-primary/60" strokeWidth={1.5} />
                     <span className="text-sm font-bold gradient-text" style={{ fontFamily: 'Orbitron, monospace' }}>
                       {stat.value}
                     </span>

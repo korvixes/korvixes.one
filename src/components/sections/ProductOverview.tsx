@@ -61,8 +61,8 @@ export function ProductOverview() {
             <span className="text-xs font-medium tracking-[0.2em] uppercase text-accent">Platform Overview</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-black tracking-tight mb-5" style={{ fontFamily: 'Orbitron, monospace' }}>
-            THE INTELLIGENCE LAYER FOR{" "}
-            <span className="gradient-text text-glow-blue">INDUSTRIAL SYSTEMS</span>
+            <span className="block">THE INTELLIGENCE LAYER FOR</span>
+            <span className="block gradient-text text-glow-blue">INDUSTRIAL SYSTEMS</span>
           </h2>
           <p className="text-muted-foreground text-sm max-w-2xl mx-auto leading-relaxed tracking-wide"
             style={{ fontFamily: 'JetBrains Mono, monospace' }}>

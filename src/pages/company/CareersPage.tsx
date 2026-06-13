@@ -417,7 +417,7 @@ export function CareersPage() {
           We hire exceptional people regardless of whether we have an open role. If you're an expert in industrial simulation, real-time systems, or OT security, we want to hear from you.
         </p>
         <a
-          href="mailto:careers@korvixes.io"
+          href="mailto:connect@korvixes.one"
           className="inline-flex items-center gap-2 px-6 py-3 cyber-chamfer bg-primary/15 border border-primary/50 hover:border-primary hover:bg-primary/25 text-primary text-xs font-semibold tracking-widest uppercase transition-all"
           style={{ fontFamily: 'JetBrains Mono, monospace' }}
         >

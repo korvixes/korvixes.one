@@ -86,9 +86,9 @@ assets using physics-bound AI.
 </p>
 <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
 <a
-href="https://app.korvixes.one/"
-target="_blank"
-rel="noreferrer"
+          href="https://app.korvixes.one/"
+          target="_blank"
+          rel="noopener noreferrer"
 className="w-full sm:w-auto px-8 py-3.5 bg-gradient-to-r from-[#2A6BDB] to-[#3BC4E8] text-white font-semibold rounded-lg hover:brightness-110 transition-all duration-300 text-center shadow-[0_0_20px_rgba(42,107,219,0.4)]"
 >
 Open the Dashboard

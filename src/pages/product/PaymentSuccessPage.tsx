@@ -60,7 +60,7 @@ export function PaymentSuccessPage() {
           <a
             href="https://app.korvixes.one/"
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-6 py-3 btn-shimmer border border-accent/60 text-accent cyber-chamfer text-xs font-bold tracking-widest uppercase hover:glow-cyan transition-all duration-200"
             style={{ fontFamily: "JetBrains Mono, monospace" }}
           >

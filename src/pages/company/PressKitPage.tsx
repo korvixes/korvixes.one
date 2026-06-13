@@ -13,10 +13,10 @@ const assets = [
 ]
 
 const pressContacts = [
-  { region: "Global / UK", name: "Communications Team", email: "press@korvixes.io" },
-  { region: "North America", name: "NA Press Desk", email: "press.na@korvixes.io" },
-  { region: "DACH / Europe", name: "EMEA Press Desk", email: "press.emea@korvixes.io" },
-  { region: "APAC", name: "APAC Press Desk", email: "press.apac@korvixes.io" },
+  { region: "Global", name: "Communications Team", email: "connect@korvixes.one" },
+  { region: "North America", name: "NA Press Desk", email: "connect@korvixes.one" },
+  { region: "Europe", name: "EMEA Press Desk", email: "connect@korvixes.one" },
+  { region: "APAC", name: "APAC Press Desk", email: "connect@korvixes.one" },
 ]
 
 const boilerplate = `Korvixes is the leading Industrial Simulation Platform for Digital Twin intelligence. Trusted by 180+ enterprise manufacturers, energy operators, and infrastructure providers across 40+ countries, Korvixes enables real-time simulation of industrial systems with 99.8% physics accuracy and sub-millisecond latency.
@@ -66,10 +66,10 @@ export function PressKitPage() {
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: i * 0.06 }}
               className="hud-panel p-5 flex items-start gap-4 hover:border-primary/30 transition-all group cursor-pointer"
-              onClick={() => window.location.href = `mailto:press@korvixes.io?subject=Press%20Kit%20Request%3A%20${encodeURIComponent(asset.name)}`}
+              onClick={() => window.location.href = `mailto:connect@korvixes.one?subject=Press%20Kit%20Request%3A%20${encodeURIComponent(asset.name)}`}
               role="button"
               tabIndex={0}
-              onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") window.location.href = `mailto:press@korvixes.io?subject=Press%20Kit%20Request%3A%20${encodeURIComponent(asset.name)}` }}
+              onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") window.location.href = `mailto:connect@korvixes.one?subject=Press%20Kit%20Request%3A%20${encodeURIComponent(asset.name)}` }}
             >
               <div className="w-9 h-9 cyber-chamfer-sm bg-primary/8 border border-primary/25 flex items-center justify-center shrink-0">
                 {asset.type === 'PDF' ? <FileText className="w-4 h-4 text-primary" strokeWidth={1.5} /> : <Image className="w-4 h-4 text-primary" strokeWidth={1.5} />}
@@ -144,7 +144,7 @@ export function PressKitPage() {
       <div className="p-6 border border-primary/20 bg-primary/5 cyber-chamfer">
         <p className="text-xs text-muted-foreground leading-relaxed" style={{ fontFamily: 'JetBrains Mono, monospace' }}>
           <span className="text-primary mr-2">▸</span>
-          All Korvixes brand assets are provided for editorial, press, and journalistic use only. Commercial use, modification of logos, or use in competitive contexts requires written authorization from Korvixes Marketing. Contact <span className="text-accent">brand@korvixes.io</span> for licensing inquiries.
+          All Korvixes brand assets are provided for editorial, press, and journalistic use only. Commercial use, modification of logos, or use in competitive contexts requires written authorization from Korvixes Marketing. Contact <span className="text-accent">connect@korvixes.one</span> for licensing inquiries.
         </p>
       </div>
     </PageLayout>

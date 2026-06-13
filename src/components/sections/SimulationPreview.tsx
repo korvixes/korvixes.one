@@ -51,7 +51,7 @@ function MetricCard({ icon: Icon, label, value, unit, delta, colorClass }: {
       <div className="flex items-center justify-between">
         <span className="text-[10px] text-muted-foreground tracking-widest uppercase" style={{ fontFamily: 'JetBrains Mono, monospace' }}>{label}</span>
         <div className={`w-7 h-7 cyber-chamfer-sm flex items-center justify-center border ${colorClass}`}>
-          <Icon className="w-3 h-3" strokeWidth={1.5} />
+          <Icon className="w-5 h-5" strokeWidth={1.5} />
         </div>
       </div>
       <div className="flex items-end gap-1.5">
@@ -118,12 +118,12 @@ export function SimulationPreview() {
           className="text-center mb-10 md:mb-16"
         >
           <div className="inline-flex items-center gap-2 px-4 py-1.5 mb-6 border border-primary/30 bg-primary/5 cyber-chamfer-sm">
-            <Terminal className="w-3 h-3 text-primary" />
+            <Terminal className="w-5 h-5 text-primary" />
             <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-primary" style={{ fontFamily: 'JetBrains Mono, monospace' }}>Live Simulation</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-black tracking-tight mb-5" style={{ fontFamily: 'Orbitron, monospace' }}>
-            WATCH YOUR FACTORY{" "}
-            <span className="gradient-text text-glow-blue">THINK IN REAL-TIME</span>
+            <span className="block">WATCH YOUR FACTORY</span>
+            <span className="block gradient-text text-glow-blue">THINK IN REAL-TIME</span>
           </h2>
           <p className="text-muted-foreground text-xs max-w-2xl mx-auto tracking-wide leading-relaxed"
             style={{ fontFamily: 'JetBrains Mono, monospace' }}>
@@ -156,7 +156,7 @@ export function SimulationPreview() {
                 <span className="text-[9px] font-bold tracking-wider text-[#00e676] uppercase" style={{ fontFamily: 'JetBrains Mono, monospace' }}>LIVE</span>
               </div>
               <div className="flex items-center gap-1.5 text-[10px] text-muted-foreground" style={{ fontFamily: 'JetBrains Mono, monospace' }}>
-                <Clock className="w-3 h-3" />
+                <Clock className="w-5 h-5" />
                 <AnimatePresence mode="wait">
                   <motion.span
                     key={tick}
@@ -265,8 +265,8 @@ export function SimulationPreview() {
                       </div>
                     </div>
                     {machine.status === "warning"
-                      ? <AlertCircle className="w-3.5 h-3.5 text-[#f59e0b] shrink-0" />
-                      : <CheckCircle2 className="w-3.5 h-3.5 text-[#00e676] shrink-0" />
+                      ? <AlertCircle className="w-5 h-5 text-[#f59e0b] shrink-0" />
+                      : <CheckCircle2 className="w-5 h-5 text-[#00e676] shrink-0" />
                     }
                   </motion.div>
                 ))}

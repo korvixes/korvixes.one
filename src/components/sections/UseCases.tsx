@@ -67,8 +67,8 @@ export function UseCases() {
             <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-accent" style={{ fontFamily: 'JetBrains Mono, monospace' }}>// Use Cases</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-black tracking-tight mb-5" style={{ fontFamily: 'Orbitron, monospace' }}>
-            BUILT FOR EVERY{" "}
-            <span className="text-accent text-glow-cyan">INDUSTRIAL SECTOR</span>
+            <span className="block">BUILT FOR EVERY</span>
+            <span className="block text-accent text-glow-cyan">INDUSTRIAL SECTOR</span>
           </h2>
           <p className="text-muted-foreground text-xs max-w-2xl mx-auto leading-relaxed tracking-wide"
             style={{ fontFamily: 'JetBrains Mono, monospace' }}>

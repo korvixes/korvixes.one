@@ -49,8 +49,8 @@ export function Features() {
             <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-primary">// Platform Features</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-black tracking-tight mb-5" style={{ fontFamily: 'Orbitron, monospace' }}>
-            BUILT FOR INDUSTRIAL{" "}
-            <span className="gradient-text text-glow-blue">ENGINEERING TEAMS</span>
+            <span className="block">BUILT FOR INDUSTRIAL</span>
+            <span className="block gradient-text text-glow-blue">ENGINEERING TEAMS</span>
           </h2>
           <p className="text-muted-foreground text-xs max-w-2xl mx-auto leading-relaxed tracking-wide"
             style={{ fontFamily: 'JetBrains Mono, monospace' }}>

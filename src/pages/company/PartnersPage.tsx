@@ -67,7 +67,7 @@ export function PartnersPage() {
             </p>
           </div>
           <a
-            href="mailto:partners@korvixes.io"
+            href="mailto:connect@korvixes.one"
             className="shrink-0 inline-flex items-center gap-2 px-6 py-3 cyber-chamfer bg-primary/15 border border-primary/50 hover:border-primary hover:bg-primary/25 text-primary text-xs font-semibold tracking-widest uppercase transition-all"
             style={{ fontFamily: 'JetBrains Mono, monospace' }}
           >

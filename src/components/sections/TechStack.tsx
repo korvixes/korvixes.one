@@ -58,8 +58,8 @@ export function TechStack() {
             <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-primary" style={{ fontFamily: 'JetBrains Mono, monospace' }}>// Technology Stack</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-black tracking-tight mb-5" style={{ fontFamily: 'Orbitron, monospace' }}>
-            ENGINEERED FOR{" "}
-            <span className="gradient-text">PERFORMANCE AT SCALE</span>
+            <span className="block">ENGINEERED FOR</span>
+            <span className="block gradient-text">PERFORMANCE AT SCALE</span>
           </h2>
           <p className="text-muted-foreground text-xs max-w-2xl mx-auto leading-relaxed tracking-wide"
             style={{ fontFamily: 'JetBrains Mono, monospace' }}>

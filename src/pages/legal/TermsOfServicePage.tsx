@@ -119,8 +119,24 @@ export function TermsOfServicePage() {
         </h3>
         <p className="text-xs text-muted-foreground leading-relaxed" style={{ fontFamily: 'JetBrains Mono, monospace' }}>
           For legal inquiries, contract amendments, or enterprise agreement negotiations, contact our Legal team at{" "}
-          <span className="text-accent">legal@korvixes.io</span>. Notices to Korvixes must be sent by registered mail to Korvixes Technologies Ltd., 1 Technology Square, London, EC2A 4NE, United Kingdom.
+          <span className="text-accent">connect@korvixes.one</span>. Notices to Korvixes must be sent by registered mail to Korvixis AI Inc, 1 Market Plaza, Floor 11, San Francisco, CA 94105, USA.
         </p>
+      </div>
+
+      {/* Contact Us */}
+      <div className="mt-16 p-6 border border-accent/20 bg-accent/5 cyber-chamfer">
+        <h3 className="text-xs font-bold text-accent tracking-widest uppercase mb-3" style={{ fontFamily: 'Orbitron, monospace' }}>
+          Contact Us
+        </h3>
+        <div className="text-xs text-muted-foreground leading-relaxed space-y-1" style={{ fontFamily: 'JetBrains Mono, monospace' }}>
+          <p>Korvixis AI Inc</p>
+          <p>Founder &amp; CEO: Vikram Anand</p>
+          <p>1 Market Plaza, Floor 11</p>
+          <p>San Francisco, CA 94105, USA</p>
+          <p>Phone: +1 (415) 555-0166</p>
+          <p>Email: <span className="text-accent">connect@korvixes.one</span></p>
+          <p>Website: <span className="text-accent">https://korvixes.one</span></p>
+        </div>
       </div>
     </PageLayout>
   )

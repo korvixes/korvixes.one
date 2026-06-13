@@ -51,8 +51,8 @@ export function FAQSection() {
             <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-accent" style={{ fontFamily: 'JetBrains Mono, monospace' }}>// FAQ</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-black tracking-tight mb-5" style={{ fontFamily: 'Orbitron, monospace' }}>
-            FREQUENTLY ASKED{" "}
-            <span className="text-accent text-glow-cyan">QUESTIONS</span>
+            <span className="block">FREQUENTLY ASKED</span>
+            <span className="block text-accent text-glow-cyan">QUESTIONS</span>
           </h2>
           <p className="text-muted-foreground text-xs max-w-2xl mx-auto leading-relaxed tracking-wide"
             style={{ fontFamily: 'JetBrains Mono, monospace' }}>

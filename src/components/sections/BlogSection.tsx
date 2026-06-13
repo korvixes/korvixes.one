@@ -44,8 +44,8 @@ export function BlogSection() {
               <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-primary">// Blog</span>
             </div>
             <h2 className="text-4xl md:text-5xl font-black tracking-tight mb-5" style={{ fontFamily: 'Orbitron, monospace' }}>
-              LATEST{" "}
-              <span className="gradient-text text-glow-blue">INSIGHTS</span>
+              <span className="block">LATEST</span>
+              <span className="block gradient-text text-glow-blue">INSIGHTS</span>
             </h2>
             <p className="text-muted-foreground text-xs max-w-2xl mx-auto leading-relaxed tracking-wide"
               style={{ fontFamily: 'JetBrains Mono, monospace' }}>
@@ -80,7 +80,7 @@ export function BlogSection() {
                       {post.category.toUpperCase()}
                     </span>
                     <div className="flex items-center gap-1.5 text-[10px] text-muted-foreground/50" style={{ fontFamily: 'JetBrains Mono, monospace' }}>
-                      <Clock className="w-3 h-3" strokeWidth={1.5} />
+                      <Clock className="w-5 h-5" strokeWidth={1.5} />
                       {post.readTime}
                     </div>
                   </div>
@@ -93,7 +93,7 @@ export function BlogSection() {
                   <div className="flex items-center justify-between mt-auto pt-4 border-t border-border/30">
                     <span className="text-[10px] text-muted-foreground/50" style={{ fontFamily: 'JetBrains Mono, monospace' }}>{post.date}</span>
                     <span className="flex items-center gap-1.5 text-[10px] text-primary/60 group-hover:text-primary transition-colors" style={{ fontFamily: 'JetBrains Mono, monospace' }}>
-                      Read More <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
+                      Read More <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                     </span>
                   </div>
                 </motion.article>
@@ -129,7 +129,7 @@ export function BlogSection() {
                       <span className="text-[10px] text-muted-foreground/40" style={{ fontFamily: 'JetBrains Mono, monospace' }}>{post.date}</span>
                       <span className="text-muted-foreground/30 hidden sm:inline">·</span>
                       <div className="hidden sm:flex items-center gap-1 text-[10px] text-muted-foreground/40" style={{ fontFamily: 'JetBrains Mono, monospace' }}>
-                        <Clock className="w-2.5 h-2.5" strokeWidth={1.5} />
+                        <Clock className="w-5 h-5" strokeWidth={1.5} />
                         {post.readTime}
                       </div>
                     </div>
@@ -140,7 +140,7 @@ export function BlogSection() {
                       {post.excerpt}
                     </p>
                   </div>
-                  <ArrowRight className="w-4 h-4 text-muted-foreground/20 group-hover:text-primary group-hover:translate-x-1 transition-all shrink-0 mt-5" />
+                  <ArrowRight className="w-5 h-5 text-muted-foreground/20 group-hover:text-primary group-hover:translate-x-1 transition-all shrink-0 mt-5" />
                 </motion.article>
               ))}
             </div>
@@ -159,7 +159,7 @@ export function BlogSection() {
               style={{ fontFamily: 'JetBrains Mono, monospace' }}
             >
               View All Posts
-              <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Link>
           </motion.div>
         </div>

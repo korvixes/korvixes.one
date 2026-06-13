@@ -36,7 +36,7 @@ export function CTASection() {
         >
           {/* Terminal indicator */}
           <div className="inline-flex items-center gap-2 px-4 py-1.5 mb-8 border border-primary/30 bg-primary/5 cyber-chamfer-sm">
-            <Terminal className="w-3 h-3 text-primary" />
+            <Terminal className="w-5 h-5 text-primary" />
             <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-primary" style={{ fontFamily: 'JetBrains Mono, monospace' }}>
               Get Started Today
             </span>
@@ -44,8 +44,8 @@ export function CTASection() {
 
           {/* Headline */}
           <h2 className="text-4xl md:text-6xl font-black tracking-tight mb-6" style={{ fontFamily: 'Orbitron, monospace' }}>
-            READY TO EXPLORE{" "}
-            <span className="gradient-text text-glow-blue block md:inline">INDUSTRIAL INTELLIGENCE?</span>
+            <span className="block">READY TO EXPLORE</span>
+            <span className="block gradient-text text-glow-blue">INDUSTRIAL INTELLIGENCE?</span>
           </h2>
 
           {/* Terminal subtext panel */}
@@ -91,14 +91,14 @@ export function CTASection() {
                 <span className="text-muted-foreground/30 mx-[1px]">_</span>
                 <span className="text-foreground/80 group-hover:text-foreground font-semibold tracking-[0.15em] transition-colors duration-300">ENGINE</span>
               </span>
-              <ChevronRight className="w-4 h-4 relative text-primary/50 group-hover:text-accent group-hover:translate-x-0.5 transition-all duration-300" />
+              <ChevronRight className="w-5 h-5 relative text-primary/50 group-hover:text-accent group-hover:translate-x-0.5 transition-all duration-300" />
             </Link>
             <Link
               to="/contact"
               className="group relative cyber-chamfer border border-border/50 hover:border-accent/50 bg-transparent hover:bg-accent/5 text-muted-foreground hover:text-accent text-sm font-bold tracking-widest uppercase px-6 sm:px-10 py-4 transition-all duration-200 flex items-center gap-3"
               style={{ fontFamily: 'JetBrains Mono, monospace' }}
             >
-              <Mail className="w-4 h-4" />
+              <Mail className="w-5 h-5" />
               <span>Contact Us</span>
             </Link>
           </div>

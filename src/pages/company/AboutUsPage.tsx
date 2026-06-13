@@ -3,13 +3,13 @@ import { motion } from "framer-motion"
 import { Hexagon, Cpu, Globe, Users } from "lucide-react"
 
 const timeline = [
-  { year: "2019", event: "Founded", detail: "Korvixes founded by a team of industrial engineers and simulation scientists from Siemens, leading technology institutions, and MIT CSAIL." },
-  { year: "2020", event: "Seed Round", detail: "$8M seed led by Threshold Ventures. First enterprise pilot with a Tier 1 automotive manufacturer." },
-  { year: "2021", event: "Series A", detail: "$34M Series A. Platform reaches 50+ enterprise customers. Opened Singapore and Frankfurt engineering hubs." },
-  { year: "2022", event: "Engine v2", detail: "Korvixes Simulation Engine v2 achieves sub-2ms latency. First deployment in live nuclear facility monitoring." },
-  { year: "2023", event: "Series B", detail: "$120M Series B led by Accel & Tiger Global. ISO 27001 and IEC 62443 certification awarded." },
-  { year: "2024", event: "Simulation Intelligence Layer", detail: "Simulation Intelligence layer launched. 180+ enterprise clients across 40+ countries." },
-  { year: "2025", event: "v4 Platform", detail: "Platform v4 with Digital Twin Composer and SOC 2 Type II certification. 10,240-node global network." },
+  { year: "2024", event: "Founded", detail: "Korvixes founded by Vikram Anand and a team of industrial engineers and simulation scientists from Siemens, leading technology institutions, and MIT CSAIL." },
+  { year: "2024", event: "Seed Round", detail: "$8M seed led by Threshold Ventures. First enterprise pilot with a Tier 1 automotive manufacturer." },
+  { year: "2025", event: "Series A", detail: "$34M Series A. Platform reaches 50+ enterprise customers. Opened Singapore and Frankfurt engineering hubs." },
+  { year: "2025", event: "Engine v2", detail: "Korvixes Simulation Engine v2 achieves sub-2ms latency. First deployment in live nuclear facility monitoring." },
+  { year: "2026", event: "Series B", detail: "$120M Series B led by Accel & Tiger Global. ISO 27001 and IEC 62443 certification awarded." },
+  { year: "2026", event: "Simulation Intelligence Layer", detail: "Simulation Intelligence layer launched. 180+ enterprise clients across 40+ countries." },
+  { year: "2026", event: "v4 Platform", detail: "Platform v4 with Digital Twin Composer and SOC 2 Type II certification. 10,240-node global network." },
 ]
 
 const values = [
@@ -42,7 +42,7 @@ export function AboutUsPage() {
           <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
           <div className="relative">
             <div className="flex items-center gap-2 mb-6">
-              <Hexagon className="w-4 h-4 text-primary" strokeWidth={1} />
+              <Hexagon className="w-5 h-5 text-primary" strokeWidth={1} />
               <span className="text-[10px] text-primary tracking-[0.3em] uppercase" style={{ fontFamily: 'JetBrains Mono, monospace' }}>Mission Statement</span>
             </div>
             <p className="text-xl md:text-2xl font-bold text-foreground/90 leading-relaxed max-w-3xl" style={{ fontFamily: 'Orbitron, monospace', letterSpacing: '0.02em' }}>
@@ -60,7 +60,7 @@ export function AboutUsPage() {
           { value: "180+", label: "Enterprise Clients", icon: Users },
           { value: "40+", label: "Countries", icon: Globe },
           { value: "10,240", label: "Network Nodes", icon: Cpu },
-          { value: "2019", label: "Founded", icon: Hexagon },
+          { value: "2024", label: "Founded", icon: Hexagon },
         ].map((stat, i) => (
           <motion.div
             key={stat.label}
@@ -70,7 +70,7 @@ export function AboutUsPage() {
             transition={{ duration: 0.4, delay: i * 0.08 }}
             className="hud-panel p-5 text-center hover:border-primary/40 transition-all duration-300 group"
           >
-            <stat.icon className="w-4 h-4 text-primary mx-auto mb-3 group-hover:text-glow-blue transition-all duration-300" strokeWidth={1} />
+            <stat.icon className="w-5 h-5 text-primary mx-auto mb-3 group-hover:text-glow-blue transition-all duration-300" strokeWidth={1} />
             <div className="text-2xl font-black gradient-text" style={{ fontFamily: 'Orbitron, monospace' }}>{stat.value}</div>
             <div className="text-[10px] text-muted-foreground tracking-widest uppercase mt-1" style={{ fontFamily: 'JetBrains Mono, monospace' }}>{stat.label}</div>
           </motion.div>

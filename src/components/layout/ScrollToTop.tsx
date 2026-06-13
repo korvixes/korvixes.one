@@ -15,7 +15,7 @@ export function ScrollToTop() {
         el.scrollIntoView({ behavior: "smooth" })
       }
     } else if (!sectionRoutes.has(pathname)) {
-      window.scrollTo(0, 0)
+      window.scrollTo({ top: 0, behavior: "smooth" })
     }
     prevHash.current = hash
   }, [pathname, hash])

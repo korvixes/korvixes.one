@@ -175,7 +175,7 @@ export function Hero() {
             style={{ fontFamily: 'JetBrains Mono, monospace' }}
           >
             <span>Explore Platform</span>
-            <ChevronRight className="w-4 h-4" />
+            <ChevronRight className="w-5 h-5" />
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
               <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/80 to-transparent animate-beam" />
             </div>
@@ -185,7 +185,7 @@ export function Hero() {
             className="cyber-chamfer border border-border/50 hover:border-accent/50 bg-transparent hover:bg-accent/5 text-muted-foreground hover:text-accent text-sm font-semibold tracking-widest uppercase px-6 sm:px-8 py-3 sm:py-4 transition-all duration-200 flex items-center gap-3"
             style={{ fontFamily: 'JetBrains Mono, monospace' }}
           >
-            <Play className="w-4 h-4" />
+            <Play className="w-5 h-5" />
             <span>View Solutions</span>
           </button>
         </motion.div>
@@ -199,7 +199,7 @@ export function Hero() {
         >
           {stats.map((stat, i) => (
             <div key={stat.label} className={`flex flex-col items-center gap-1 px-8 py-2 ${i < stats.length - 1 ? 'border-r border-border/40 max-sm:border-r-0 max-sm:border-b max-sm:pb-4 max-sm:mb-4 max-sm:w-full' : ''}`}>
-              <stat.icon className="w-3.5 h-3.5 text-accent mb-1" strokeWidth={1.5} />
+              <stat.icon className="w-5 h-5 text-accent mb-1" strokeWidth={1.5} />
               <span className="text-xl md:text-2xl font-black gradient-text" style={{ fontFamily: 'Orbitron, monospace' }}>
                 {stat.value}
               </span>

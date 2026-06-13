@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect, useCallback } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { useNavigate, useLocation, Link } from "react-router-dom"
 import { Menu, X, ChevronRight } from "lucide-react"
@@ -8,22 +8,71 @@ import { useNavigateToSection } from "@/hooks/useNavigateToSection"
 const navLinks = [
   { label: "Home", to: "/" },
   { label: "Features", to: "/features" },
-  { label: "About", to: "/about" },
   { label: "Solutions", to: "/solutions" },
+  { label: "Testimonials", to: "/testimonials" },
+  { label: "About", to: "/about" },
+  { label: "FAQ", to: "/faq" },
   { label: "Contact", to: "/contact" },
 ]
+
+const labelToSectionId: Record<string, string> = {
+  Features: "features",
+  Solutions: "use-cases",
+  Testimonials: "testimonials",
+  FAQ: "faq",
+}
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
+  const [activeSection, setActiveSection] = useState("")
   const navigate = useNavigate()
   const location = useLocation()
   const navigateToSection = useNavigateToSection()
 
-  const isActive = (to: string) => {
-    if (to === "/") return location.pathname === "/"
-    return location.pathname.startsWith(to)
-  }
+  const sectionIds = Object.values(labelToSectionId)
+  const sectionLabels = Object.keys(labelToSectionId)
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries.filter((e) => e.isIntersecting)
+        if (visible.length > 0) {
+          const top = visible.reduce((prev, curr) =>
+            curr.boundingClientRect.top < prev.boundingClientRect.top ? curr : prev
+          )
+          const id = top.target.id
+          if (sectionIds.includes(id)) {
+            setActiveSection(id)
+          }
+        } else {
+          const allAbove = entries.every((e) => e.boundingClientRect.top < 0)
+          if (allAbove) {
+            const bottom = entries.reduce((prev, curr) =>
+              curr.boundingClientRect.top > prev.boundingClientRect.top ? curr : prev
+            )
+            const id = bottom.target.id
+            if (sectionIds.includes(id)) {
+              setActiveSection(id)
+            }
+          }
+        }
+      },
+      { threshold: 0.15, rootMargin: "-80px 0px -30% 0px" }
+    )
+
+    sectionIds.forEach((id) => {
+      const el = document.getElementById(id)
+      if (el) observer.observe(el)
+    })
+
+    return () => observer.disconnect()
+  }, [])
+
+  const isSectionActive = useCallback((label: string) => {
+    const expectedId = labelToSectionId[label]
+    return expectedId === activeSection
+  }, [activeSection])
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20)
@@ -31,10 +80,10 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", onScroll)
   }, [])
 
-  const handleNavClick = (to: string) => {
+  const handleNavClick = (to: string, label: string) => {
     setMobileOpen(false)
-    if (to.startsWith("/#")) {
-      const sectionId = to.replace("/#", "")
+    const sectionId = labelToSectionId[label]
+    if (sectionId && location.pathname === "/") {
       navigateToSection(sectionId)
     } else {
       navigate(to)
@@ -63,31 +112,41 @@ export function Navbar() {
           <img
             src={headerLogo}
             alt="Korvixes"
-            className="h-11 w-auto object-contain brightness-90 group-hover:brightness-110 transition-all duration-300"
+            className="h-14 w-auto object-contain brightness-90 group-hover:brightness-110 transition-all duration-300"
           />
         </Link>
 
         {/* Desktop nav */}
         <nav className="hidden md:flex items-center gap-0">
-          {navLinks.map((link) => (
-            <Link
-              key={link.label}
-              to={link.to}
-              onClick={() => handleNavClick(link.to)}
-              className={`relative px-4 py-2 text-xs font-medium tracking-widest uppercase transition-colors duration-200 group ${
-                isActive(link.to) ? "text-accent" : "text-muted-foreground hover:text-accent"
-              }`}
-              style={{ fontFamily: 'JetBrains Mono, monospace' }}
-            >
-              <span className="relative z-10">{link.label}</span>
-              {/* Underline */}
-              <span className={`absolute bottom-0 left-1/2 -translate-x-1/2 h-px bg-accent transition-all duration-300 ${
-                isActive(link.to) ? "w-full" : "w-0 group-hover:w-full"
-              }`} />
-              {/* Hover bg */}
-              <span className="absolute inset-0 bg-accent/0 group-hover:bg-accent/5 transition-all duration-200" />
-            </Link>
-          ))}
+          {navLinks.map((link) => {
+            const isSectionLink = labelToSectionId[link.label] !== undefined
+            const sectionActive = isSectionLink && isSectionActive(link.label)
+            const routeActive = link.label === "Home"
+              ? location.pathname === "/" && !activeSection
+              : location.pathname.startsWith(link.to)
+            const active = routeActive || sectionActive
+            return (
+              <Link
+                key={link.label}
+                to={link.to}
+                onClick={() => handleNavClick(link.to, link.label)}
+                className={`relative px-4 py-2 text-xs font-medium tracking-widest uppercase transition-colors duration-200 group ${
+                  active ? "text-accent" : "text-muted-foreground hover:text-accent"
+                }`}
+                style={{ fontFamily: 'JetBrains Mono, monospace' }}
+              >
+                <span className="relative z-10">{link.label}</span>
+                {/* Underline */}
+                <span className={`absolute bottom-0 left-1/2 -translate-x-1/2 h-px bg-accent transition-all duration-300 ${
+                  active ? "w-full" : "w-0 group-hover:w-full"
+                }`} />
+                {/* Hover bg */}
+                <span className={`absolute inset-0 transition-all duration-200 ${
+                  active ? "bg-accent/10" : "bg-accent/0 group-hover:bg-accent/5"
+                }`} />
+              </Link>
+            )
+          })}
         </nav>
 
         {/* CTA — System Gateway */}
@@ -123,7 +182,7 @@ export function Navbar() {
               <span className="text-foreground/80 group-hover:text-foreground font-semibold tracking-[0.15em] transition-colors duration-300">ENGINE</span>
             </span>
             {/* Arrow */}
-            <ChevronRight className="w-3 h-3 relative text-primary/50 group-hover:text-accent group-hover:translate-x-0.5 transition-all duration-300" />
+            <ChevronRight className="w-5 h-5 relative text-primary/50 group-hover:text-accent group-hover:translate-x-0.5 transition-all duration-300" />
           </Link>
         </div>
 
@@ -151,7 +210,7 @@ export function Navbar() {
                 <Link
                   key={link.label}
                   to={link.to}
-                  onClick={() => handleNavClick(link.to)}
+                  onClick={() => handleNavClick(link.to, link.label)}
                   className="px-3 py-3 text-xs font-medium tracking-widest uppercase text-muted-foreground hover:text-accent transition-colors terminal-prompt"
                   style={{ fontFamily: 'JetBrains Mono, monospace' }}
                 >

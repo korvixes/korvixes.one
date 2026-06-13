@@ -77,7 +77,7 @@ export function Pricing() {
     setLoadingPlan(planName)
     try {
       const { url } = await createCheckoutSession(planName)
-      window.location.href = url
+      window.open(url, '_blank', 'noopener,noreferrer')
     } catch (err) {
       const { toast } = await import("sonner")
       const message =
@@ -114,8 +114,8 @@ export function Pricing() {
             <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-primary">// Pricing</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-black tracking-tight mb-5" style={{ fontFamily: 'Orbitron, monospace' }}>
-            CHOOSE YOUR{" "}
-            <span className="gradient-text text-glow-blue">SIMULATION TIER</span>
+            <span className="block">CHOOSE YOUR</span>
+            <span className="block gradient-text text-glow-blue">SIMULATION TIER</span>
           </h2>
           <p className="text-muted-foreground text-xs max-w-2xl mx-auto leading-relaxed tracking-wide"
             style={{ fontFamily: 'JetBrains Mono, monospace' }}>
@@ -160,7 +160,7 @@ export function Pricing() {
                 {/* Badge */}
                 {plan.highlighted && (
                   <div className="inline-flex items-center gap-1.5 px-3 py-1 border border-accent/40 bg-accent/10 mb-5 w-fit">
-                    <Hexagon className="w-2.5 h-2.5 text-accent" strokeWidth={2} />
+                    <Hexagon className="w-5 h-5 text-accent" strokeWidth={2} />
                     <span className="text-[8px] font-bold tracking-[0.25em] uppercase text-accent" style={{ fontFamily: 'JetBrains Mono, monospace' }}>
                       Most Popular
                     </span>
@@ -198,7 +198,7 @@ export function Pricing() {
                 <div className="flex-1 space-y-2.5 mb-8">
                   {plan.features.map((f) => (
                     <div key={f} className="flex items-start gap-2.5">
-                      <Check className={`w-3 h-3 mt-0.5 shrink-0 ${
+                      <Check className={`w-5 h-5 mt-0.5 shrink-0 ${
                         plan.highlighted ? 'text-accent' : 'text-primary'
                       }`} strokeWidth={2} />
                       <span className="text-[11px] text-muted-foreground tracking-wide" style={{ fontFamily: 'JetBrains Mono, monospace' }}>
@@ -220,11 +220,11 @@ export function Pricing() {
                   style={{ fontFamily: 'JetBrains Mono, monospace' }}
                 >
                   {loadingPlan === plan.name ? (
-                    <Loader2 className="w-4 h-4 animate-spin relative z-10" />
+                    <Loader2 className="w-5 h-5 animate-spin relative z-10" />
                   ) : (
                     <>
                       <span className="relative z-10">{plan.ctaLabel}</span>
-                      <ChevronRight className="w-3 h-3 relative z-10 group-hover:translate-x-0.5 transition-transform" />
+                      <ChevronRight className="w-5 h-5 relative z-10 group-hover:translate-x-0.5 transition-transform" />
                     </>
                   )}
                   <div className="absolute inset-0 overflow-hidden pointer-events-none">

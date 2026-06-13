@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom"
 import { Toaster } from "sonner"
 import { ScrollToTop } from "@/components/layout/ScrollToTop"
 import { ChatwootWidget } from "@/components/layout/ChatwootWidget"
+import { CookieConsentBanner } from "@/components/layout/CookieConsentBanner"
 import { HomePage } from "@/pages/HomePage"
 
 // Legal Pages
@@ -27,11 +28,23 @@ import { ContactPage } from "@/pages/contact/ContactPage"
 import { ProductPage } from "@/pages/product/ProductPage"
 import { PaymentSuccessPage } from "@/pages/product/PaymentSuccessPage"
 
+// Auth Pages
+import { SignInPage } from "@/pages/auth/SignInPage"
+import { SignUpPage } from "@/pages/auth/SignUpPage"
+
+// Dashboard Pages
+import { FactoryFloorPage } from "@/pages/dashboard/FactoryFloorPage"
+import { SimulationsPage } from "@/pages/dashboard/SimulationsPage"
+import { AIPredictionsPage } from "@/pages/dashboard/AIPredictionsPage"
+import { SystemHealthPage } from "@/pages/dashboard/SystemHealthPage"
+import { SystemMonitoringPage } from "@/pages/dashboard/SystemMonitoringPage"
+
 export function App() {
   return (
     <BrowserRouter>
       <ScrollToTop />
       <ChatwootWidget />
+      <CookieConsentBanner />
       <Toaster
         position="top-right"
         toastOptions={{
@@ -69,6 +82,15 @@ export function App() {
         <Route path="/contact" element={<ContactPage />} />
         {/* Product */}
         <Route path="/product" element={<ProductPage />} />
+        {/* Auth */}
+        <Route path="/signin" element={<SignInPage />} />
+        <Route path="/signup" element={<SignUpPage />} />
+        {/* Dashboard */}
+        <Route path="/dashboard" element={<FactoryFloorPage />} />
+        <Route path="/dashboard/simulations" element={<SimulationsPage />} />
+        <Route path="/dashboard/ai-predictions" element={<AIPredictionsPage />} />
+        <Route path="/dashboard/system-health" element={<SystemHealthPage />} />
+        <Route path="/dashboard/system-monitoring" element={<SystemMonitoringPage />} />
       </Routes>
     </BrowserRouter>
   )

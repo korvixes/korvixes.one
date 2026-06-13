@@ -38,7 +38,7 @@ export function PageLayout({ children, title, subtitle, badge, backHref = "/" }:
                 className="inline-flex items-center gap-2 text-[10px] text-muted-foreground hover:text-primary tracking-[0.2em] uppercase mb-8 transition-colors"
                 style={{ fontFamily: 'JetBrains Mono, monospace' }}
               >
-                <ArrowLeft className="w-3 h-3" />
+                <ArrowLeft className="w-5 h-5" />
                 Back to Platform
               </Link>
             </motion.div>
