@@ -108,7 +108,7 @@ export function Features() {
               </span>
 
               {/* Icon */}
-              <div className={`relative w-9 h-9 cyber-chamfer-sm flex items-center justify-center mb-4 transition-all duration-300 ${
+              <div className={`relative w-11 h-11 cyber-chamfer-sm flex items-center justify-center mb-4 transition-all duration-300 ${
                 feature.accentColor === 'accent'
                   ? 'bg-accent/8 border border-accent/20 group-hover:bg-accent/20 group-hover:border-accent/50 group-hover:glow-cyan-sm'
                   : 'bg-primary/8 border border-primary/20 group-hover:bg-primary/20 group-hover:border-primary/50 group-hover:glow-blue-sm'
@@ -116,7 +116,7 @@ export function Features() {
                 <div className={`absolute inset-0 opacity-40 blur-sm rounded-sm transition-opacity duration-300 ${
                   feature.accentColor === 'accent' ? 'bg-accent/10' : 'bg-primary/10'
                 }`} />
-                <img src={feature.iconSrc} alt="" className="w-8 h-8 object-contain relative z-10" />
+                <img src={feature.iconSrc} alt="" className="w-11 h-11 object-contain relative z-10" />
               </div>
 
               <h3 className="font-bold text-xs mb-2.5 leading-snug uppercase tracking-wide text-foreground/90 group-hover:text-foreground transition-colors" style={{ fontFamily: 'Orbitron, monospace' }}>

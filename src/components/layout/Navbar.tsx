@@ -6,12 +6,11 @@ import headerLogo from "@/assets/branding/logo-header.webp"
 import { useNavigateToSection } from "@/hooks/useNavigateToSection"
 
 const navLinks = [
-  { label: "Home", to: "/" },
   { label: "Features", to: "/features" },
   { label: "Solutions", to: "/solutions" },
   { label: "Testimonials", to: "/testimonials" },
-  { label: "About", to: "/about" },
   { label: "FAQ", to: "/faq" },
+  { label: "About", to: "/about" },
   { label: "Contact", to: "/contact" },
 ]
 
@@ -33,52 +32,34 @@ export function Navbar() {
   const sectionIds = Object.values(labelToSectionId)
   const sectionLabels = Object.keys(labelToSectionId)
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const visible = entries.filter((e) => e.isIntersecting)
-        if (visible.length > 0) {
-          const top = visible.reduce((prev, curr) =>
-            curr.boundingClientRect.top < prev.boundingClientRect.top ? curr : prev
-          )
-          const id = top.target.id
-          if (sectionIds.includes(id)) {
-            setActiveSection(id)
-          }
-        } else {
-          const allAbove = entries.every((e) => e.boundingClientRect.top < 0)
-          if (allAbove) {
-            const bottom = entries.reduce((prev, curr) =>
-              curr.boundingClientRect.top > prev.boundingClientRect.top ? curr : prev
-            )
-            const id = bottom.target.id
-            if (sectionIds.includes(id)) {
-              setActiveSection(id)
-            }
-          }
-        }
-      },
-      { threshold: 0.15, rootMargin: "-80px 0px -30% 0px" }
-    )
-
-    sectionIds.forEach((id) => {
-      const el = document.getElementById(id)
-      if (el) observer.observe(el)
-    })
-
-    return () => observer.disconnect()
-  }, [])
-
   const isSectionActive = useCallback((label: string) => {
     const expectedId = labelToSectionId[label]
     return expectedId === activeSection
   }, [activeSection])
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20)
-    window.addEventListener("scroll", onScroll)
+    const offset = 130
+
+    const onScroll = () => {
+      setScrolled(window.scrollY > 20)
+
+      let current = ""
+      for (const id of sectionIds) {
+        const el = document.getElementById(id)
+        if (el) {
+          const rect = el.getBoundingClientRect()
+          if (rect.top <= offset) {
+            current = id
+          }
+        }
+      }
+      setActiveSection(current)
+    }
+
+    window.addEventListener("scroll", onScroll, { passive: true })
+    onScroll() // Initialize on mount
     return () => window.removeEventListener("scroll", onScroll)
-  }, [])
+  }, [location.pathname])
 
   const handleNavClick = (to: string, label: string) => {
     setMobileOpen(false)
@@ -119,12 +100,12 @@ export function Navbar() {
         {/* Desktop nav */}
         <nav className="hidden md:flex items-center gap-0">
           {navLinks.map((link) => {
+            const isLandingPage = location.pathname === "/" ||
+              ["/features", "/solutions", "/testimonials", "/faq", "/pricing"].includes(location.pathname)
             const isSectionLink = labelToSectionId[link.label] !== undefined
             const sectionActive = isSectionLink && isSectionActive(link.label)
-            const routeActive = link.label === "Home"
-              ? location.pathname === "/" && !activeSection
-              : location.pathname.startsWith(link.to)
-            const active = routeActive || sectionActive
+            const routeActive = location.pathname.startsWith(link.to)
+            const active = isSectionLink && isLandingPage ? sectionActive : routeActive
             return (
               <Link
                 key={link.label}

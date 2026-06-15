@@ -1,7 +1,7 @@
 import { useRef, useState, useCallback } from "react"
 import { useNavigate } from "react-router-dom"
 import { motion, useInView } from "framer-motion"
-import { Check, ChevronRight, Hexagon, Loader2 } from "lucide-react"
+import { Check, ChevronRight, Loader2 } from "lucide-react"
 import { createCheckoutSession } from "@/lib/api"
 
 const plans = [
@@ -160,7 +160,7 @@ export function Pricing() {
                 {/* Badge */}
                 {plan.highlighted && (
                   <div className="inline-flex items-center gap-1.5 px-3 py-1 border border-accent/40 bg-accent/10 mb-5 w-fit">
-                    <Hexagon className="w-5 h-5 text-accent" strokeWidth={2} />
+                    <img src="/assets/1.svg" alt="" className="w-5 h-5 object-contain opacity-80" style={{ filter: 'brightness(0) saturate(100%) invert(72%) sepia(31%) hue-rotate(155deg) saturate(600%) brightness(95%)' }} />
                     <span className="text-[8px] font-bold tracking-[0.25em] uppercase text-accent" style={{ fontFamily: 'JetBrains Mono, monospace' }}>
                       Most Popular
                     </span>

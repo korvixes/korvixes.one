@@ -627,8 +627,8 @@ export function ContactPage() {
                     onClick={() => setSupportModal({ open: true, index: i })}
                   >
                     <div className="flex items-center gap-3">
-                      <div className="w-8 h-8 cyber-chamfer-sm bg-primary/8 border border-primary/20 flex items-center justify-center group-hover:border-primary/50 group-hover:bg-primary/20 group-hover:glow-blue-sm transition-all duration-300">
-                        <img src={cat.iconSrc} alt="" className="w-5 h-5 object-contain" />
+                      <div className="w-10 h-10 cyber-chamfer-sm bg-primary/8 border border-primary/20 flex items-center justify-center group-hover:border-primary/50 group-hover:bg-primary/20 group-hover:glow-blue-sm transition-all duration-300">
+                        <img src={cat.iconSrc} alt="" className="w-10 h-10 object-contain" />
                       </div>
                       <div className="flex-1 min-w-0">
                         <div className="text-[11px] font-bold text-foreground/90 tracking-wide uppercase" style={{ fontFamily: 'Orbitron, monospace' }}>

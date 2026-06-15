@@ -122,8 +122,8 @@ export function AboutUsPage() {
               className="hud-panel p-6 hover:border-primary/40 transition-all duration-300 group"
             >
               <div className="flex items-center gap-3 mb-3">
-                <div className="w-8 h-8 cyber-chamfer-sm bg-primary/8 border border-primary/20 flex items-center justify-center group-hover:bg-primary/20 group-hover:border-primary/50 group-hover:glow-blue-sm transition-all duration-300">
-                  <img src={value.iconSrc} alt="" className="w-5 h-5 object-contain" />
+                <div className="w-10 h-10 cyber-chamfer-sm bg-primary/8 border border-primary/20 flex items-center justify-center group-hover:bg-primary/20 group-hover:border-primary/50 group-hover:glow-blue-sm transition-all duration-300">
+                  <img src={value.iconSrc} alt="" className="w-10 h-10 object-contain" />
                 </div>
                 <h3 className="text-xs font-bold text-foreground/90 tracking-wide uppercase" style={{ fontFamily: 'Orbitron, monospace' }}>{value.title}</h3>
               </div>

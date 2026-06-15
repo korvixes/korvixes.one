@@ -50,7 +50,7 @@ export function PageLayout({ children, title, subtitle, badge, backHref = "/" }:
                 transition={{ duration: 0.6, delay: 0.1 }}
                 src="/assets/1.svg"
                 alt=""
-                className="w-8 h-8 object-contain shrink-0 mt-1.5 opacity-50 hover:opacity-80 transition-opacity duration-500"
+                className="w-12 h-12 object-contain shrink-0 mt-0.5 opacity-80 hover:opacity-100 transition-opacity duration-500"
               />
 
               <div>

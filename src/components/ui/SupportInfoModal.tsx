@@ -92,8 +92,8 @@ export function SupportInfoModal({ open, onOpenChange, title, icon, sections }: 
             {/* Header */}
             <div className="px-6 md:px-8 pt-2 md:pt-8 pb-4 border-b border-border/30">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 cyber-chamfer-sm bg-primary/10 border border-primary/30 flex items-center justify-center shrink-0">
-                  <img src={icon} alt="" className="w-5 h-5 object-contain" />
+                <div className="w-12 h-12 cyber-chamfer-sm bg-primary/10 border border-primary/30 flex items-center justify-center shrink-0">
+                  <img src={icon} alt="" className="w-12 h-12 object-contain" />
                 </div>
                 <div>
                   <h2 className="text-sm font-bold text-foreground/90" style={{ fontFamily: 'Orbitron, monospace' }}>
