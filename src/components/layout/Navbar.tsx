@@ -27,8 +27,6 @@ export function Navbar() {
   const navigateToSection = useNavigateToSection()
 
   const sectionIds = Object.values(labelToSectionId)
-  const sectionLabels = Object.keys(labelToSectionId)
-
   const isSectionActive = useCallback((label: string) => {
     const expectedId = labelToSectionId[label]
     return expectedId === activeSection
