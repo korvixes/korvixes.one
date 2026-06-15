@@ -6,10 +6,9 @@ import headerLogo from "@/assets/branding/logo-header.webp"
 import { useNavigateToSection } from "@/hooks/useNavigateToSection"
 
 const navLinks = [
+  { label: "Home", to: "/" },
   { label: "Features", to: "/features" },
   { label: "Solutions", to: "/solutions" },
-  { label: "Testimonials", to: "/testimonials" },
-  { label: "FAQ", to: "/faq" },
   { label: "About", to: "/about" },
   { label: "Contact", to: "/contact" },
 ]
@@ -17,8 +16,6 @@ const navLinks = [
 const labelToSectionId: Record<string, string> = {
   Features: "features",
   Solutions: "use-cases",
-  Testimonials: "testimonials",
-  FAQ: "faq",
 }
 
 export function Navbar() {
@@ -101,11 +98,21 @@ export function Navbar() {
         <nav className="hidden md:flex items-center gap-0">
           {navLinks.map((link) => {
             const isLandingPage = location.pathname === "/" ||
-              ["/features", "/solutions", "/testimonials", "/faq", "/pricing"].includes(location.pathname)
+              ["/features", "/solutions", "/pricing"].includes(location.pathname)
             const isSectionLink = labelToSectionId[link.label] !== undefined
             const sectionActive = isSectionLink && isSectionActive(link.label)
-            const routeActive = location.pathname.startsWith(link.to)
-            const active = isSectionLink && isLandingPage ? sectionActive : routeActive
+            const routeActive = link.to === "/"
+              ? location.pathname === "/"
+              : location.pathname.startsWith(link.to)
+
+            let active: boolean
+            if (link.label === "Home") {
+              active = isLandingPage && (activeSection === "" || window.scrollY < 200)
+            } else if (isSectionLink && isLandingPage) {
+              active = sectionActive
+            } else {
+              active = routeActive
+            }
             return (
               <Link
                 key={link.label}

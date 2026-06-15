@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import { Toaster } from "sonner"
 import { ScrollToTop } from "@/components/layout/ScrollToTop"
-import { ChatwootWidget } from "@/components/layout/ChatwootWidget"
+import { ChatwootFAB } from "@/components/ChatwootFAB"
 import { CookieConsentBanner } from "@/components/layout/CookieConsentBanner"
 import { HomePage } from "@/pages/HomePage"
 
@@ -43,7 +43,7 @@ export function App() {
   return (
     <BrowserRouter>
       <ScrollToTop />
-      <ChatwootWidget />
+      <ChatwootFAB />
       <CookieConsentBanner />
       <Toaster
         position="top-right"
