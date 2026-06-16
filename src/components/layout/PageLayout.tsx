@@ -53,7 +53,7 @@ export function PageLayout({ children, title, subtitle, badge, backHref = "/" }:
                 className="w-12 h-12 object-contain shrink-0 mt-0.5 opacity-80 hover:opacity-100 transition-opacity duration-500"
               />
 
-              <div>
+              <div className="flex-1 min-w-0">
                 {badge && (
                   <motion.div
                     initial={{ opacity: 0, y: 10 }}
@@ -70,7 +70,7 @@ export function PageLayout({ children, title, subtitle, badge, backHref = "/" }:
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.2 }}
-                  className="text-3xl md:text-5xl font-black gradient-text mb-3"
+                  className="text-2xl sm:text-3xl md:text-5xl font-black gradient-text mb-3"
                   style={{ fontFamily: 'Orbitron, monospace', letterSpacing: '-0.01em' }}
                 >
                   {title}
