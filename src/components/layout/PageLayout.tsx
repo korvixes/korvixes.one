@@ -15,7 +15,7 @@ interface PageLayoutProps {
 
 export function PageLayout({ children, title, subtitle, badge, backHref = "/" }: PageLayoutProps) {
   return (
-    <div className="min-h-screen bg-background text-foreground antialiased">
+    <div className="min-h-screen bg-background text-foreground antialiased overflow-x-hidden">
       <Navbar />
       <main className="pt-24 pb-0">
         {/* Page hero header */}

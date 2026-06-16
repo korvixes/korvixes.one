@@ -65,7 +65,7 @@ return (
         </div>
         {/* Dark overlay for readability */}
 <div className="absolute inset-0 bg-black/60"></div>
-<div className="max-w-6xl mx-auto w-full relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center pt-12">
+<div className="max-w-6xl mx-auto w-full relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center pt-20 lg:pt-12">
 {/* LEFT CONTENT */}
 <div className="lg:col-span-7 space-y-6 text-center lg:text-left">
 <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#3BC4E8]/30 bg-[#0B0E16]/80 text-xs font-semibold tracking-wider text-[#3BC4E8] uppercase backdrop-blur-md shadow-[0_0_15px_rgba(59,196,232,0.15)]">
