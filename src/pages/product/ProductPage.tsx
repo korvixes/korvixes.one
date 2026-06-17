@@ -36,12 +36,12 @@ telemetry: "Modulus Predictive Frame Load"
 }
 ];
 const nvidiaStack = [
-{ name: "NVIDIA Omniverse", desc: "Core engine for real-time industrial scaling, ray-traced physics representation, and structural sync." },
-{ name: "NVIDIA Isaac Sim", desc: "Powerful robotics and automated workflow modeling runtime environment for industrial stress testing." },
-{ name: "NVIDIA Modulus", desc: "Physics-informed neural network framework ensuring real-world correctness across simulations." },
-{ name: "NVIDIA TensorRT", desc: "Ultra-low latency inference compiler to evaluate live industrial state anomalies instantly." },
-{ name: "NVIDIA Triton", desc: "Scalable inference platform orchestration to serve simultaneous simulation requests seamlessly." },
-{ name: "NVIDIA CUDA", desc: "Parallel processing computational engine powering deep telemetry array evaluations." }
+  { name: "Real-Time Simulation Engine", desc: "Core engine for real-time industrial scaling, ray-traced physics representation, and structural sync." },
+  { name: "Advanced Robotics Simulation", desc: "Powerful robotics and automated workflow modeling runtime environment for industrial stress testing." },
+  { name: "Physics-Informed AI Models", desc: "Physics-informed neural network framework ensuring real-world correctness across simulations." },
+  { name: "Low-Latency Inference Engine", desc: "Ultra-low latency inference compiler to evaluate live industrial state anomalies instantly." },
+  { name: "Scalable AI Serving Infrastructure", desc: "Scalable inference platform orchestration to serve simultaneous simulation requests seamlessly." },
+  { name: "Parallel Computing Framework", desc: "Parallel processing computational engine powering deep telemetry array evaluations." }
 ];
 return (
 <>
@@ -268,7 +268,7 @@ within structural pipelines.
 <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
 <div className="text-xs font-bold tracking-widest text-[#3BC4E8] uppercase">Hardware Co-Processing Stack</div>
 <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white">
-The NVIDIA Omniverse Ecosystem
+          The Real-Time Simulation Engine
 </h2>
 <p className="text-slate-400">
 Deeply integrated with NVIDIA acceleration SDKs to calculate massive physics
@@ -312,12 +312,12 @@ scale instantly globally.
 </p>
 <div className="grid grid-cols-2 gap-4 pt-2">
 <div className="p-4 bg-[#07090F]/90 border border-slate-800 rounded-xl">
-<div className="text-xs text-slate-500 font-mono">AWS EC2 NODES</div>
-<div className="text-base font-bold text-white mt-1">P4 / P5 Blueprints</div>
+              <div className="text-xs text-slate-500 font-mono">Distributed Cloud Infrastructure</div>
+              <div className="text-base font-bold text-white mt-1">High-Performance GPU Configurations</div>
 </div>
 <div className="p-4 bg-[#07090F]/90 border border-slate-800 rounded-xl">
-<div className="text-xs text-slate-500 font-mono">COMPUTE ARCHITECTURE</div>
-<div className="text-base font-bold text-[#3BC4E8] mt-1">A100 & H100 Fabrics</div>
+              <div className="text-xs text-slate-500 font-mono">Scalable Compute Architecture</div>
+              <div className="text-base font-bold text-[#3BC4E8] mt-1">Next-Generation GPU Fabric</div>
 </div>
 </div>
 </div>
@@ -363,7 +363,7 @@ safely inside a hyper-accelerated predictive simulation cluster.
 <div className="pt-12 flex justify-center items-center gap-8 text-xs font-mono text-slate-500">
 <div>CORE STATUS: <span className="text-cyan-400">SYNCHRONIZED</span></div>
 <div>BUILD PROFILE: <span className="text-white">v4.1.2-PROD</span></div>
-<div>CLUSTER NET: <span className="text-white">AWS_NODE_GLOBAL</span></div>
+<div>CLUSTER NET: <span className="text-white">GLOBAL_COMPUTE_GRID</span></div>
 </div>
 </div>
 </section>

@@ -2,16 +2,6 @@ import { PageLayout } from "@/components/layout/PageLayout"
 import { motion } from "framer-motion"
 import { Hexagon, Cpu, Globe, Users } from "lucide-react"
 
-const timeline = [
-  { year: "2024", event: "Founded", detail: "Korvixes founded by Vikram Anand and a team of industrial engineers and simulation scientists from Siemens, leading technology institutions, and MIT CSAIL." },
-  { year: "2024", event: "Seed Round", detail: "$8M seed led by Threshold Ventures. First enterprise pilot with a Tier 1 automotive manufacturer." },
-  { year: "2025", event: "Series A", detail: "$34M Series A. Platform reaches 50+ enterprise customers. Opened Singapore and Frankfurt engineering hubs." },
-  { year: "2025", event: "Engine v2", detail: "Korvixes Simulation Engine v2 achieves sub-2ms latency. First deployment in live nuclear facility monitoring." },
-  { year: "2026", event: "Series B", detail: "$120M Series B led by Accel & Tiger Global. ISO 27001 and IEC 62443 certification awarded." },
-  { year: "2026", event: "Simulation Intelligence Layer", detail: "Simulation Intelligence layer launched. 180+ enterprise clients across 40+ countries." },
-  { year: "2026", event: "v4 Platform", detail: "Platform v4 with Digital Twin Composer and SOC 2 Type II certification. 10,240-node global network." },
-]
-
 const values = [
   { iconSrc: "/assets/32.svg", title: "Precision First", text: "Every simulation output must be defensible. We hold ourselves to 99.8% accuracy across all workloads — not as a marketing claim but as an engineering constraint." },
   { iconSrc: "/assets/33.svg", title: "Industrial Scale", text: "We build for the world's most demanding environments: automotive plants, energy grids, semiconductor fabs. Korvixes earns its place in critical infrastructure." },
@@ -20,8 +10,8 @@ const values = [
 ]
 
 const leadership = [
-  { name: "Dr. Amara Osei", imgSrc: "/assets/Dr. Amara Osei.svg", role: "CEO & Co-Founder", background: "Former Principal Engineer, Siemens Digital Industries. PhD in Control Systems, MIT." },
-  { name: "Mr. James Harrington", imgSrc: "/assets/Mr. James Harrington.svg", role: "CTO & Co-Founder", background: "Former Research Scientist, NVIDIA Omniverse. MS in Computational Physics, Stanford." },
+  { name: "Dr. Amara Osei", imgSrc: "/assets/Dr. Amara Osei.svg", role: "COO", background: "Former Principal Engineer, Siemens Digital Industries. PhD in Control Systems, MIT." },
+  { name: "Mr. James Harrington", imgSrc: "/assets/Mr. James Harrington.svg", role: "CTO", background: "Former Research Scientist, NVIDIA Omniverse. MS in Computational Physics, Stanford." },
   { name: "Dr. Vikram Nair", imgSrc: "/assets/Dr. Vikram Nair.svg", role: "Chief Product Officer", background: "Former VP Product, PTC Inc. 15 years in industrial software product strategy." },
   { name: "Mrs. Sophie Whitfield", imgSrc: "/assets/Mrs. Sophie Whitfield.svg", role: "Chief Security Officer", background: "Former NSA Technical Director. Led critical infrastructure cybersecurity programs for 12 years." },
   { name: "Miss Lauren Mitchell", imgSrc: "/assets/Miss Lauren Mitchell.svg", role: "VP Engineering", background: "Former Engineering Director, Rockwell Automation. Expert in real-time systems and OT/IT convergence." },
@@ -77,36 +67,6 @@ export function AboutUsPage() {
         ))}
       </div>
 
-      {/* Timeline */}
-      <div className="mb-20">
-        <h2 className="text-xs font-bold text-muted-foreground tracking-[0.25em] uppercase mb-8" style={{ fontFamily: 'JetBrains Mono, monospace' }}>// Company Timeline</h2>
-        <div className="relative">
-          <div className="absolute left-16 top-0 bottom-0 w-px bg-gradient-to-b from-primary/40 via-primary/20 to-transparent" />
-          <div className="space-y-6">
-            {timeline.map((item, i) => (
-              <motion.div
-                key={item.year}
-                initial={{ opacity: 0, x: -15 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: i * 0.06 }}
-                className="flex items-start gap-6"
-              >
-                <div className="w-14 shrink-0 text-right">
-                  <span className="text-xs font-bold text-primary" style={{ fontFamily: 'Orbitron, monospace' }}>{item.year}</span>
-                </div>
-                <div className="relative">
-                  <div className="absolute -left-[1.15rem] top-1.5 w-2 h-2 rounded-full bg-primary border border-background" />
-                </div>
-                <div className="hud-panel p-4 flex-1 hover:border-primary/30 transition-colors">
-                  <div className="text-xs font-bold text-foreground/90 mb-1 tracking-wide" style={{ fontFamily: 'Orbitron, monospace' }}>{item.event}</div>
-                  <div className="text-xs text-muted-foreground leading-relaxed" style={{ fontFamily: 'JetBrains Mono, monospace' }}>{item.detail}</div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </div>
 
       {/* Values */}
       <div className="mb-20">
