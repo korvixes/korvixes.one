@@ -34,7 +34,7 @@ const footerLinks: Record<string, { label: string; href: string }[]> = {
 const socialLinks: { name: string; href: string; icon: React.ReactNode }[] = [
   {
     name: "LinkedIn",
-    href: "https://www.linkedin.com/company/korvixis-ai/",
+    href: "https://www.linkedin.com/company/korvixes-ai/",
     icon: (
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
         <rect x="2" y="2" width="20" height="20" rx="2" ry="2" />
@@ -46,7 +46,7 @@ const socialLinks: { name: string; href: string; icon: React.ReactNode }[] = [
   },
   {
     name: "Facebook",
-    href: "https://www.facebook.com/KorvixisAI/",
+    href: "https://www.facebook.com/KorvixesAI/",
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
         <circle cx="12" cy="12" r="10" />
@@ -56,7 +56,7 @@ const socialLinks: { name: string; href: string; icon: React.ReactNode }[] = [
   },
   {
     name: "X",
-    href: "https://x.com/KorvixisAI/",
+    href: "https://x.com/KorvixesAI",
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
         <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
@@ -65,7 +65,7 @@ const socialLinks: { name: string; href: string; icon: React.ReactNode }[] = [
   },
   {
     name: "Pinterest",
-    href: "https://www.pinterest.com/KorvixisAI/",
+    href: "https://www.pinterest.com/KorvixesAI/",
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
         <circle cx="12" cy="12" r="10" />
@@ -75,7 +75,7 @@ const socialLinks: { name: string; href: string; icon: React.ReactNode }[] = [
   },
   {
     name: "YouTube",
-    href: "https://www.youtube.com/@KorvixisAI",
+    href: "https://www.youtube.com/@KorvixesAI",
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
         <rect x="2" y="6" width="20" height="12" rx="3" />
